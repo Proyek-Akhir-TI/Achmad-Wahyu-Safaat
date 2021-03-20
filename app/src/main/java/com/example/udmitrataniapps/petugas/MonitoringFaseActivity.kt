@@ -1,8 +1,9 @@
-package com.example.udmitrataniapps
+package com.example.udmitrataniapps.petugas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.adapter.MonitoringFaseAdapter
 import com.example.udmitrataniapps.model.MonitoringFase
 import kotlinx.android.synthetic.main.activity_monitoring.*

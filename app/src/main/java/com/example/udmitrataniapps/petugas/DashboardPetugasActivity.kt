@@ -1,8 +1,9 @@
-package com.example.udmitrataniapps
+package com.example.udmitrataniapps.petugas
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.udmitrataniapps.R
 import kotlinx.android.synthetic.main.activity_dashboard_petugas.*
 
 class DashboardPetugasActivity : AppCompatActivity() {

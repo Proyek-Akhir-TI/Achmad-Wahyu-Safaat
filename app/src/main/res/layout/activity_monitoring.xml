@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/colorPrimaryDark"
-    tools:context=".MonitoringFaseActivity">
+    tools:context=".petugas.MonitoringFaseActivity">
 
     <SearchView
         android:id="@+id/sv_cari_jadwal"

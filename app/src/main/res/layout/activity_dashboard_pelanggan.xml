@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardPetugasActivity">
+    tools:context=".petugas.DashboardPetugasActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -71,6 +71,7 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
+                    android:id="@+id/menu_informasi_benih"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"

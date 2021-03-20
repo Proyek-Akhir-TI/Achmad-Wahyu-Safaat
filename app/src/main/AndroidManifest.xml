@@ -9,31 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".JadwalMonitoringActivity"></activity>
+        <activity android:name=".pelanggan.InformasiBenihActivity"></activity>
         <activity
-            android:name=".MonitoringFaseActivity"
-            android:parentActivityName=".DashboardPelangganActivity" />
+            android:name=".petugas.JadwalMonitoringActivity"
+            android:parentActivityName=".petugas.DashboardPetugasActivity" />
         <activity
-            android:name=".NotifikasiActivity"
-            android:parentActivityName=".DashboardPelangganActivity" />
+            android:name=".petugas.MonitoringFaseActivity"
+            android:parentActivityName=".petugas.DashboardPetugasActivity" />
         <activity
-            android:name=".DashboardPelangganActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".petugas.NotifikasiActivity"
+            android:parentActivityName=".petugas.DashboardPetugasActivity" />
         <activity
-            android:name=".DashboardPetugasActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".petugas.DashboardPetugasActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".pelanggan.DashboardPelangganActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".SignUpActivity"
             android:parentActivityName=".SignInAnctivity" />

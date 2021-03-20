@@ -30,7 +30,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:fontFamily="@font/montserrat"
-            android:text="@string/email"
+            android:text="@string/username"
             android:textColor="@android:color/secondary_text_light"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,15 +47,13 @@
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="Wahyusafaat@gmail.com"
-            android:inputType="textEmailAddress"
+            android:hint="Wahyu Safaat"
+            android:inputType="textPersonName"
             android:padding="12dp"
             android:shadowColor="#00A64848"
             android:textColor="#5E35B1"
             android:textColorHighlight="@android:color/darker_gray"
             android:textColorHint="@android:color/darker_gray"
-            android:textColorLink="#FFFFFF"
-            android:textCursorDrawable="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.064"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,43 +87,41 @@
             android:textColor="#5E35B1"
             android:textColorHighlight="@android:color/darker_gray"
             android:textColorHint="@android:color/darker_gray"
-            android:textCursorDrawable="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_masuk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:background="@color/colorPrimary"
-            android:editable="false"
             android:fontFamily="@font/montserrat"
             android:shadowColor="@android:color/holo_blue_dark"
-            android:text="Sign In"
+            android:text="Masuk"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+            app:layout_constraintTop_toBottomOf="@+id/switch_pelanggan" />
 
         <TextView
             android:id="@+id/tvDaftar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:fontFamily="sans-serif-black"
-            android:text="Dont have an account? Sign up"
+            android:text="Daftar sebagai Pelanggan"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
 
         <TextView
             android:id="@+id/textView8"
@@ -138,6 +134,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <Switch
+            android:id="@+id/switch_pelanggan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:checked="false"
+            android:text="Pelanggan"
+            android:textOff="petugas"
+            android:textOn="pelanggan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+            tools:checked="false" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
