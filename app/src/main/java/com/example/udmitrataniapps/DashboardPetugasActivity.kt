@@ -15,7 +15,12 @@ class DashboardPetugasActivity : AppCompatActivity() {
         }
 
         menu_monitoring.setOnClickListener {
-            var intent = Intent(this, MonitoringActivity::class.java)
+            var intent = Intent(this, MonitoringFaseActivity::class.java)
+            startActivity(intent)
+        }
+
+        menu_jadwal.setOnClickListener {
+            var intent = Intent(this, JadwalMonitoringActivity::class.java)
             startActivity(intent)
         }
     }

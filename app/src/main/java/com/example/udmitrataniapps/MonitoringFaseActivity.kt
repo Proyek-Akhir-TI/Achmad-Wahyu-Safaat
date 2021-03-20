@@ -7,7 +7,7 @@ import com.example.udmitrataniapps.adapter.MonitoringFaseAdapter
 import com.example.udmitrataniapps.model.MonitoringFase
 import kotlinx.android.synthetic.main.activity_monitoring.*
 
-class MonitoringActivity : AppCompatActivity() {
+class MonitoringFaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitoring)

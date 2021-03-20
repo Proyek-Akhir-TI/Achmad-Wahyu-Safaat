@@ -17,14 +17,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
-            android:background="@color/colorPrimary"
-            android:elevation="6dp"
+            android:background="#039BE5"
             android:padding="36dp">
 
             <TextView
                 android:id="@+id/tv_Dashboard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
                 android:text="My Dashboard"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_Dashboard"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Username"
                 android:textColor="#ffffff" />
 
@@ -44,6 +45,7 @@
                 android:layout_alignParentRight="true"
                 android:drawableStart="@drawable/ic_exit"
                 android:drawablePadding="5dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Keluar"
                 android:textColor="#ffffff"
                 android:textSize="14sp"
@@ -66,7 +68,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                app:cardElevation="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -77,47 +79,17 @@
                     android:paddingStart="75dp">
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_marginRight="12dp"
-                        android:src="@drawable/schedule" />
+                        android:background="#FFFFFF"
+                        android:src="@drawable/benih" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pesan Benih"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
-                    android:paddingStart="75dp">
-
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginRight="12dp"
-                        android:src="@drawable/monitoring" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Riwayat Monitoring"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Informasi Benih"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -141,16 +113,83 @@
                     android:paddingStart="75dp">
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_marginRight="12dp"
-                        android:background="#FFFFFF"
-                        android:src="@drawable/notification" />
+                        android:src="@drawable/pesan" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Pesan Benih"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:paddingStart="75dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/lahan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="Data Lahan"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:paddingStart="75dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/history" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Riwayat Monitoring"
                         android:textSize="14sp" />
 
                 </LinearLayout>

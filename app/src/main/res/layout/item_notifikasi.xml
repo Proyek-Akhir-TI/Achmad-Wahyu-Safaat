@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="8dp"
+    android:layout_margin="2dp"
     android:elevation="5dp"
     app:cardCornerRadius="5dp">
 
@@ -18,15 +18,17 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title Notifikasi"
             android:layout_marginBottom="12dp"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
+            android:fontFamily="@font/poppins_medium"
+            android:text="Title Notifikasi"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_desc"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_medium"
             android:text="Detail Notifikasi" />
 
     </LinearLayout>

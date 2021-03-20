@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MonitoringActivity"
-            android:parentActivityName=".DashboardPelangganActivity"
-            ></activity>
+        <activity android:name=".JadwalMonitoringActivity"></activity>
+        <activity
+            android:name=".MonitoringFaseActivity"
+            android:parentActivityName=".DashboardPelangganActivity" />
         <activity
             android:name=".NotifikasiActivity"
             android:parentActivityName=".DashboardPelangganActivity" />
