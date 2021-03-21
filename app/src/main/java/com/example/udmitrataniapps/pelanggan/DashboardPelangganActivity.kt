@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.widget.LinearLayout
 import com.example.udmitrataniapps.R
 import kotlinx.android.synthetic.main.activity_dashboard_pelanggan.*
 
@@ -16,5 +17,16 @@ class DashboardPelangganActivity : AppCompatActivity() {
             var intent = Intent(this, InformasiBenihActivity::class.java)
             startActivity(intent)
         }
+
+        menu_pesan_benih.setOnClickListener(){
+            var intent = Intent(this, PesanBenihActivity::class.java)
+            startActivity(intent)
+        }
+
+        menu_data_lahan.setOnClickListener(){
+            var intent = Intent(this, LahanPelangganActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
+

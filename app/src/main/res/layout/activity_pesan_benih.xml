@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="java.util.Map"/>
+        <import type="com.example.udmitrataniapps.model.LahanPelanggan"/>
+        <variable
+            name="mapLahan"
+            type="Map&lt;String, String>" />
+        <variable
+            name="key"
+            type="String" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".pelanggan.PesanBenihActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="Pilih Lahan"/>
+
+            <Spinner
+                android:id="@+id/sp_lahan"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:entries="@array/list_lahan"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rencana Tanngal Sebar" />
+
+            <Button
+                android:id="@+id/btn_tgl_sebar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@drawable/custom_button"
+                android:text="20 Juni 2021"
+                android:drawableEnd="@drawable/ic_down"
+                style="@style/Widget.AppCompat.Spinner.DropDown.ActionBar"/>
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rencana Tanngal Tanam" />
+
+            <Button
+                android:id="@+id/btn_tgl_tanam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@drawable/custom_button"
+                android:text="20 Juni 2021"
+                android:drawableEnd="@drawable/ic_down"
+                style="@style/Widget.AppCompat.Spinner.DropDown.ActionBar"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Varietas Benih Rencana"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_input"
+                android:hint="Benih Pilihan Anda"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Rencana Banyak Benih"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_input"
+                android:hint="Total Benih (kg)"
+                android:padding="10dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@android:color/holo_blue_dark"
+                android:text="Kirim Pesanan"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

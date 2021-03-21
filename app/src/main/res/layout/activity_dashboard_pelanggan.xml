@@ -106,6 +106,7 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
+                    android:id="@+id/menu_pesan_benih"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -139,6 +140,7 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
+                    android:id="@+id/menu_data_lahan"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -173,6 +175,7 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
+                    android:id="@+id/menu_riwayat_monitoring"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"

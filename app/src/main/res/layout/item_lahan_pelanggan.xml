@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:elevation="5dp"
+    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tv_nama_lahan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.03"
+            android:text="Nama Lahan"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_luas_lahan_pelanggan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.03"
+            android:text="1 hektar"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_alamat_lahan_pelanggan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.03"
+            android:text="Jalan Musi No.12, Kec. Banyuwangi, Kabupaten Banyuwangi, Jawa Timur, 68432"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/custom_button"
+            android:textSize="12sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Ubah Data Lahan"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

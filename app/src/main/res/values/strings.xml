@@ -3,4 +3,18 @@
     <string name="username">Nama Pengguna</string>
     <string name="email">Email</string>
     <string name="password">Kata Sandi</string>
+    <string name="title_activity_pesan_benih">PesanBenihActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string-array name="list_lahan">
+        <item></item>
+        <item>lahan 2</item>
+        <item>lahan 3</item>
+        <item>lahan 4</item>
+        <item>lahan 5</item>
+    </string-array>
 </resources>

@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pelanggan.InformasiBenihActivity"></activity>
+        <activity
+            android:name=".pelanggan.PesanBenihActivity"
+            android:label="Pesan Benih"
+            android:parentActivityName=".pelanggan.DashboardPelangganActivity"></activity>
+        <activity
+            android:name=".pelanggan.LahanPelangganActivity"
+            android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
+        <activity
+            android:name=".pelanggan.InformasiBenihActivity"
+            android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
         <activity
             android:name=".petugas.JadwalMonitoringActivity"
             android:parentActivityName=".petugas.DashboardPetugasActivity" />
@@ -18,6 +27,7 @@
             android:parentActivityName=".petugas.DashboardPetugasActivity" />
         <activity
             android:name=".petugas.NotifikasiActivity"
+            android:label="Notifikasi"
             android:parentActivityName=".petugas.DashboardPetugasActivity" />
         <activity
             android:name=".petugas.DashboardPetugasActivity"
