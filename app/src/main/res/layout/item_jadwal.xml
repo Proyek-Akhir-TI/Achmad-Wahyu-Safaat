@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="8dp"
+    android:layout_margin="5dp"
     android:elevation="5dp"
     app:cardCornerRadius="5dp"
     >
@@ -12,20 +12,21 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ffffff">
+            android:background="@drawable/bg2"
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <TextView
                 android:id="@+id/tv_nama_pemilik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Pemilik Lahan"
-                android:layout_marginBottom="8dp"
                 android:textSize="18sp"
+                android:textColor="#ffffff"
                 android:textStyle="bold" />
 
             <TextView
@@ -33,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
+                android:textColor="#ffffff"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Fase Pertumbuhan" />
 
@@ -42,6 +44,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:fontFamily="@font/poppins"
+                android:textColor="#ffffff"
                 android:text="Detail Lokasi Lahan" />
         </LinearLayout>
 
@@ -57,7 +60,7 @@
             android:fontFamily="@font/poppins_medium"
             android:padding="5dp"
             android:text="tanggal_monitoring"
-            android:textColor="@android:color/holo_green_light" />
+            android:textColor="#ffffff" />
     </RelativeLayout>
 
 

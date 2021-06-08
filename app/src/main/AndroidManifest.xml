@@ -12,7 +12,8 @@
         <activity
             android:name=".pelanggan.PesanBenihActivity"
             android:label="Pesan Benih"
-            android:parentActivityName=".pelanggan.DashboardPelangganActivity"></activity>
+            android:parentActivityName=".pelanggan.DashboardPelangganActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".pelanggan.LahanPelangganActivity"
             android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
@@ -37,8 +38,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".SignUpActivity"
-            android:parentActivityName=".SignInAnctivity" />
-        <activity android:name=".SignInAnctivity" />
+            android:parentActivityName=".SignInActivity"
+            android:screenOrientation="sensorPortrait"/>
+        <activity android:name=".SignInActivity"/>
         <activity
             android:name=".SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

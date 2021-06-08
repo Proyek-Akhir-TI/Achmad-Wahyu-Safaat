@@ -14,14 +14,14 @@ class NotifikasiActivity : AppCompatActivity() {
         setContentView(R.layout.activity_notifikasi)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        var notifikasiList = ArrayList<Notifikasi>()
+        val notifikasiList = ArrayList<Notifikasi>()
         notifikasiList.add(Notifikasi("Notifikasi 1", "detail Notifikasi 1"))
         notifikasiList.add(Notifikasi("Notifikasi 2", "detail Notifikasi 2"))
         notifikasiList.add(Notifikasi("Notifikasi 3", "detail Notifikasi 3"))
 
-        var dataAdapter = NotifikasiPetugasAdapter()
+        val dataAdapter = NotifikasiPetugasAdapter()
         rv_dataNotifikasi.apply {
-            var linearLayoutManager = LinearLayoutManager(context)
+            val linearLayoutManager = LinearLayoutManager(context)
             linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
             layoutManager = linearLayoutManager
             adapter = dataAdapter

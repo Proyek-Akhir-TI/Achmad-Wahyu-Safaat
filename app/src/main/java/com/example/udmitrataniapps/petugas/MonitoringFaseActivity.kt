@@ -14,7 +14,7 @@ class MonitoringFaseActivity : AppCompatActivity() {
         setContentView(R.layout.activity_monitoring)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        var monitoringList = ArrayList<MonitoringFase>()
+        val monitoringList = ArrayList<MonitoringFase>()
         monitoringList.add(MonitoringFase("Susanto", "jawa Timur", "Berbunga"))
         monitoringList.add(MonitoringFase("edi", "jawa Timur", "Berbunga"))
         monitoringList.add(MonitoringFase("Beni", "jawa Timur", "vegetatif"))
@@ -27,9 +27,9 @@ class MonitoringFaseActivity : AppCompatActivity() {
         monitoringList.add(MonitoringFase("Sabyan", "jawa Timur", "Berbunga"))
         monitoringList.add(MonitoringFase("Andin", "jawa Timur", "Berbunga"))
 
-        var dataAdapter = MonitoringFaseAdapter()
+        val dataAdapter = MonitoringFaseAdapter()
             rv_dataMonitoring.apply {
-                var linearLayoutManager = LinearLayoutManager(context)
+                val linearLayoutManager = LinearLayoutManager(context)
                 linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
                 layoutManager = linearLayoutManager
                 adapter = dataAdapter
