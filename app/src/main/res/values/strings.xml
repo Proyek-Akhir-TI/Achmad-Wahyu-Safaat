@@ -9,6 +9,13 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="belum_jadi_pelanggan">Belum Jadi Pelanggan?</string>
+    <string name="daftar_sekarang">Daftar Sekarang</string>
+    <string name="title">UD Mitra Tani</string>
+    <string name="this_is_for_illustration">this is for illustration</string>
+    <string name="masuk_aplikasi">Masuk Aplikasi</string>
+    <string name="login_sebagai_pelanggan">Login Sebagai Pelanggan</string>
+    <string name="login">Login</string>
 
     <string-array name="list_lahan">
         <item></item>

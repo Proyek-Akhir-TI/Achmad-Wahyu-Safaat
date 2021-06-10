@@ -3,13 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp"
         android:orientation="vertical"
+        android:padding="12dp"
         tools:context=".SignInActivity">
 
         <TextView
@@ -17,40 +20,41 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:fontFamily="@font/montserrat_bold"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
             android:layout_marginTop="24dp"
-            android:text="UD Mitra Tani"
-            android:textColor="@color/material_on_surface_emphasis_high_type"/>
+            android:text="@string/title"
+            android:textColor="#ffffff"/>
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginVertical="15dp"
-            android:contentDescription="TODO"
+            android:contentDescription="@string/this_is_for_illustration"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/signinpana" />
+            app:srcCompat="@drawable/signinpana"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="Masuk Aplikasi"
+            android:text="@string/masuk_aplikasi"
             android:textAlignment="center"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorTextBlack"
             android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="12dp"
+            android:background="#fafafa">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="6dp"
@@ -60,13 +64,14 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_username"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tv_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="6dp"
@@ -78,6 +83,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"/>
@@ -85,18 +91,19 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Switch
+                android:id="@+id/sw_login"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="@android:color/tertiary_text_light"
-                android:text="Login Sebagai Pelanggan"
+                android:text="@string/login_sebagai_pelanggan"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Button
-                android:id="@+id/containedButton"
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginVertical="6dp"
-                android:text="Login"
+                android:text="@string/login"
                 android:textSize="14sp" />
 
             <LinearLayout
@@ -106,14 +113,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Belum Jadi Pelanggan? "/>
+                    android:text="@string/belum_jadi_pelanggan"/>
 
                 <TextView
                     android:id="@+id/tv_to_register"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
-                    android:text="Daftar Sekarang"/>
+                    android:text="@string/daftar_sekarang"/>
+
             </LinearLayout>
 
         </LinearLayout>
