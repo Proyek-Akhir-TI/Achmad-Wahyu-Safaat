@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
@@ -32,6 +33,7 @@ class SignInActivity : AppCompatActivity() {
 
         btn_login.setOnClickListener{
             form_validation()
+            pb_login.visibility = View.VISIBLE
             if (sw_login.isChecked){
                 login_pegawai()
             } else
@@ -58,7 +60,7 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    private fun login_pegawai() {
+    private fun login_pelanggan() {
 
         ApiConfig.instancRetrofit.login_pelanggan(
             edt_username.text.toString(),
@@ -68,6 +70,7 @@ class SignInActivity : AppCompatActivity() {
                 call: Call<ResponseAuthPelangganModel>,
                 response: Response<ResponseAuthPelangganModel>
             ) {
+                pb_login.visibility = View.GONE
                 val respon = response.body()!!
                 if (respon.success == 1){
                     Toast.makeText(this@SignInActivity, "Success, Selamat datang "+ respon.token_id, Toast.LENGTH_SHORT).show()
@@ -81,6 +84,7 @@ class SignInActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ResponseAuthPelangganModel>, t: Throwable) {
+                pb_login.visibility = View.GONE
                 Toast.makeText(this@SignInActivity, "Error : " +t.message, Toast.LENGTH_SHORT ).show()
             }
 
@@ -88,7 +92,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
 
-    private fun login_pelanggan() {
+    private fun login_pegawai() {
         Log.d(String.toString(), "Login pegawai berhasil")
     }
 

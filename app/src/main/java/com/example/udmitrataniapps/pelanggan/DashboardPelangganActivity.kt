@@ -23,22 +23,22 @@ class DashboardPelangganActivity : AppCompatActivity() {
 
         tv_keluar.setOnClickListener(){
             sharedPref.setStatusLogin("IS_LOGIN", false)
-            startActivity(Intent(this, SignInActivity::class.java))
             finish()
+            startActivity(Intent(this, SignInActivity::class.java))
         }
 
         menu_informasi_benih.setOnClickListener(){
-            var intent = Intent(this, InformasiBenihActivity::class.java)
+            val intent = Intent(this, InformasiBenihActivity::class.java)
             startActivity(intent)
         }
 
         menu_pesan_benih.setOnClickListener(){
-            var intent = Intent(this, PesanBenihActivity::class.java)
+            val intent = Intent(this, PesanBenihActivity::class.java)
             startActivity(intent)
         }
 
         menu_data_lahan.setOnClickListener(){
-            var intent = Intent(this, LahanPelangganActivity::class.java)
+            val intent = Intent(this, LahanPelangganActivity::class.java)
             startActivity(intent)
         }
     }
