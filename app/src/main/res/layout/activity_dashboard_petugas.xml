@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_dashboard_pelanggan"
     tools:context=".petugas.DashboardPetugasActivity">
 
     <LinearLayout
@@ -17,7 +18,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
-            android:background="@color/colorPrimary"
             android:elevation="6dp"
             android:padding="36dp">
 
@@ -37,10 +37,11 @@
                 android:layout_below="@+id/tv_Dashboard"
                 android:layout_marginTop="19dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Username"
+                android:text="Sapardi"
                 android:textColor="#ffffff" />
 
             <TextView
+                android:id="@+id/tv_keluar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-        <import type="java.util.Map"/>
-        <import type="com.example.udmitrataniapps.model.LahanPelanggan"/>
-        <variable
-            name="mapLahan"
-            type="Map&lt;String, String>" />
-        <variable
-            name="key"
-            type="String" />
-    </data>
-
-    <ScrollView
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        tools:context=".pelanggan.PesanBenihActivity">
+        tools:context=".pelanggan.pesananpelanggan.PesanBenihActivity">
+
+    <ProgressBar
+        android:id="@+id/pb_alamat"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <LinearLayout
+
+            android:id="@+id/div_alamat"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -28,29 +29,33 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:text="Pilih Lahan"/>
+                android:text="Lahan yang akan ditanami" />
 
-            <Spinner
-                android:id="@+id/sp_lahan"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="12dp"
-                android:entries="@array/list_lahan"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_input">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp_lahan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </RelativeLayout>
+
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rencana Tanngal Sebar" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_tgl_sebar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="14sp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:padding = "12dp"
                 android:background="@drawable/custom_button"
                 android:text="20 Juni 2021"
                 android:drawableEnd="@drawable/ic_down"
@@ -62,13 +67,12 @@
                 android:layout_height="wrap_content"
                 android:text="Rencana Tanngal Tanam" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_tgl_tanam"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="14sp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:padding = "12dp"
                 android:background="@drawable/custom_button"
                 android:text="20 Juni 2021"
                 android:drawableEnd="@drawable/ic_down"
@@ -100,7 +104,10 @@
                 android:hint="Total Benih (kg)"
                 android:padding="10dp"/>
 
+
+
             <Button
+                android:id="@+id/btn_pesan_benih"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -108,6 +115,8 @@
                 android:text="Kirim Pesanan"
                 android:textColor="#ffffff" />
         </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
-    </ScrollView>
-</layout>
+
+
+    </RelativeLayout>

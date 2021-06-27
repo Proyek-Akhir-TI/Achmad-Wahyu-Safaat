@@ -2,27 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.udmitrataniapps">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/rojotani"
+        android:label="Rojotani"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-
-
+        <activity android:name=".pelanggan.pesananpelanggan.PesananPelangganActivity"></activity>
+        <activity android:name=".pelanggan.pesananpelanggan.DetailPesananActivity" />
+        <activity android:name=".pelanggan.lahanpelanggan.FormLahanActivity" />
         <activity
-            android:name=".pelanggan.PesanBenihActivity"
-            android:label="Pesan Benih"
-            android:parentActivityName=".pelanggan.DashboardPelangganActivity"
-            android:screenOrientation="portrait"></activity>
+            android:name=".pelanggan.pesananpelanggan.PesanBenihActivity"
+            android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
         <activity
-            android:name=".pelanggan.LahanPelangganActivity"
+            android:name=".pelanggan.lahanpelanggan.LahanPelangganActivity"
+            android:launchMode="singleTop"
             android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
         <activity
             android:name=".pelanggan.InformasiBenihActivity"
@@ -39,16 +38,19 @@
             android:parentActivityName=".petugas.DashboardPetugasActivity" />
         <activity
             android:name=".petugas.DashboardPetugasActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".pelanggan.DashboardPelangganActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignUpActivity"
             android:parentActivityName=".SignInActivity"
-            android:screenOrientation="sensorPortrait"/>
-        <activity android:name=".SignInActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SignInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

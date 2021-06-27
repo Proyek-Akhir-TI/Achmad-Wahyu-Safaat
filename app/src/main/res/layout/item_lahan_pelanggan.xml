@@ -53,6 +53,7 @@
             android:layout_marginTop="4dp">
 
             <TextView
+                android:id="@+id/btn_update_lahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_button"
@@ -66,6 +67,7 @@
 
 
             <TextView
+                android:id="@+id/btn_delete_lahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"

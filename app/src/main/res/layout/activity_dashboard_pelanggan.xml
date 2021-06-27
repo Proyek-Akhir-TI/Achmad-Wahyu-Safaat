@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_dashboard_pelanggan"
     tools:context=".petugas.DashboardPetugasActivity">
 
     <LinearLayout
@@ -17,8 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
-            android:background="#039BE5"
-            android:padding="36dp">
+            android:padding="24dp">
 
             <TextView
                 android:id="@+id/tv_Dashboard"
@@ -31,6 +31,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_Dashboard"
@@ -68,10 +69,11 @@
                 android:layout_row="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
+                    android:background="#fff"
                     android:id="@+id/menu_informasi_benih"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -103,7 +105,7 @@
                 android:layout_row="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -137,7 +139,7 @@
                 android:layout_row="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -172,7 +174,7 @@
                 android:layout_row="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout

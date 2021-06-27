@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.udmitrataniapps.app.ApiConfig
-import com.example.udmitrataniapps.model.auth.ResponseAuthPelangganModel
+import com.example.udmitrataniapps.model.ResponseModel
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,25 +18,25 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         btn_daftar.setOnClickListener {
-            register_pelanggan()
+            registerPelanggan()
         }
     }
 
 
-    private fun register_pelanggan() {
-        cek_input_field()
+    fun registerPelanggan() {
+        cekInputField()
 
-        ApiConfig.instancRetrofit.register_pelanggan(
+        ApiConfig.instancRetrofit.registerPelanggan(
             edt_nama_lengkap.text.toString(),
             edt_username.text.toString(),
             edt_password.text.toString(),
             edt_nik.text.toString(),
             edt_alamat.text.toString(),
             edt_phone.text.toString()
-        ).enqueue(object : Callback<ResponseAuthPelangganModel>{
+        ).enqueue(object : Callback<ResponseModel>{
             override fun onResponse(
-                call: Call<ResponseAuthPelangganModel>,
-                response: Response<ResponseAuthPelangganModel>
+                call: Call<ResponseModel>,
+                response: Response<ResponseModel>
             ) {
                 val respon = response.body()!!
                 if (respon.success==1){
@@ -50,13 +50,13 @@ class SignUpActivity : AppCompatActivity() {
 
             }
 
-            override fun onFailure(call: Call<ResponseAuthPelangganModel>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
                 Toast.makeText(this@SignUpActivity, "Error : "+t.message, Toast.LENGTH_SHORT).show()
             }
         })
     }
 
-    private fun cek_input_field() {
+    private fun cekInputField() {
         if (edt_nama_lengkap.text?.isEmpty()!!){
             edt_nama_lengkap.error = "Kolom Nama Lengkap tidak boleh kosong"
             edt_nama_lengkap.requestFocus()
