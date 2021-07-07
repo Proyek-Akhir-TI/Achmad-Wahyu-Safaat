@@ -10,7 +10,7 @@ import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.adapter.LahanPelangganAdapter
 import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
-import com.example.udmitrataniapps.model.ResponseLahanPelanggan
+import com.example.udmitrataniapps.model.ResponseArrayModel
 import com.example.udmitrataniapps.model.ResponseModel
 import com.example.udmitrataniapps.model.pelanggan.DataLahan
 import kotlinx.android.synthetic.main.activity_lahan_pelanggan.*
@@ -41,10 +41,10 @@ class LahanPelangganActivity : AppCompatActivity(), LahanPelangganAdapter.Callba
     }
 
     fun fetchDataLahan(adapter: LahanPelangganAdapter){
-        ApiConfig.instancRetrofit.dataLahan(token = "Bearer ${sharedPref.fetchAuthToken()}").enqueue(object : Callback<ResponseLahanPelanggan>{
+        ApiConfig.instancRetrofit.dataLahan(token = "Bearer ${sharedPref.fetchAuthToken()}").enqueue(object : Callback<ResponseArrayModel>{
             override fun onResponse(
-                call: Call<ResponseLahanPelanggan>,
-                response: Response<ResponseLahanPelanggan>
+                call: Call<ResponseArrayModel>,
+                response: Response<ResponseArrayModel>
             ) {
                 if (response.body()!!.success == 1){
                     pb_lahan.visibility = View.GONE
@@ -55,7 +55,7 @@ class LahanPelangganActivity : AppCompatActivity(), LahanPelangganAdapter.Callba
                 }
             }
 
-            override fun onFailure(call: Call<ResponseLahanPelanggan>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseArrayModel>, t: Throwable) {
                 Toast.makeText(this@LahanPelangganActivity, "Error : ${t.message}", Toast.LENGTH_SHORT).show()
             }
 

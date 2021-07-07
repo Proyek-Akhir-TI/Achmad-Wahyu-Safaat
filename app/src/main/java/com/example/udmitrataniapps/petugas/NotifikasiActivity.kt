@@ -15,9 +15,10 @@ class NotifikasiActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val notifikasiList = ArrayList<Notifikasi>()
-        notifikasiList.add(Notifikasi("Notifikasi 1", "detail Notifikasi 1"))
-        notifikasiList.add(Notifikasi("Notifikasi 2", "detail Notifikasi 2"))
-        notifikasiList.add(Notifikasi("Notifikasi 3", "detail Notifikasi 3"))
+        notifikasiList.add(Notifikasi("Jadwal baru Monitoring", "Ada 5 lahan Baru yang harus kamu monitoring", "25 Juni 2021"))
+        notifikasiList.add(Notifikasi("Laporan Monitoring", "Kamu Telah melakukan Monitoring di 2 lahan", "15 Juni 2021"))
+        notifikasiList.add(Notifikasi("Jadwal baru Monitoring", "Ada 2 lahan Baru yang harus kamu monitoring", "07 Juni 2021"))
+
 
         val dataAdapter = NotifikasiPetugasAdapter()
         rv_dataNotifikasi.apply {

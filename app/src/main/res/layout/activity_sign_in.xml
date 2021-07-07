@@ -31,10 +31,10 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textSize="24sp"
-                android:fontFamily="@font/montserrat"
+                android:fontFamily="@font/poppins_medium"
                 android:textStyle="bold"
                 android:layout_marginTop="24dp"
-                android:text="@string/title"
+                android:text="RojoTani"
                 android:textColor="#ffffff"/>
 
             <ImageView

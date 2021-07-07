@@ -15,13 +15,10 @@ class JadwalMonitoringActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         var jadwalList = ArrayList<JadwalMonitoring>()
-        jadwalList.add(JadwalMonitoring("Edi Hendra", "Kabat, Banyuwangi", "fase awal", "20-01-2021"))
-        jadwalList.add(JadwalMonitoring("Edi Santoso", "Glagah, Banyuwangi", "fase vegetatif", "20-01-2021"))
-        jadwalList.add(JadwalMonitoring("Selamet Hendra", "Songgon, Banyuwangi", "fase berbung", "20-01-2021"))
-        jadwalList.add(JadwalMonitoring("Robi Hendra", "Genteng, Banyuwangi", "fase masak", "20-02-2021"))
-        jadwalList.add(JadwalMonitoring("Robi Hendra", "Genteng, Banyuwangi", "fase masak", "20-02-2021"))
-        jadwalList.add(JadwalMonitoring("Robi Hendra", "Genteng, Banyuwangi", "fase masak", "20-02-2021"))
-        jadwalList.add(JadwalMonitoring("Robi Hendra", "Genteng, Banyuwangi", "fase masak", "20-02-2021"))
+        jadwalList.add(JadwalMonitoring("Achmad Wahyu Safaat", "Songgon, Banyuwangi", "fase awal", "20-03-2021"))
+        jadwalList.add(JadwalMonitoring("Zasiya Fahira", "Glagah, Banyuwangi", "fase vegetatif", "20-03-2021"))
+        jadwalList.add(JadwalMonitoring("Dika Hermawan", "Giri, Banyuwangi", "fase vegetatif", "20-03-2021"))
+        jadwalList.add(JadwalMonitoring("Ridwan Ananta", "Tegaldlimo, Banyuwangi", "fase vegetatif", "20-03-2021"))
 
         var dataAdapter= JadwalMonitoringAdapter()
         rv_jadwal_monitoring.apply {

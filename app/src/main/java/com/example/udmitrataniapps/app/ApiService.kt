@@ -1,6 +1,6 @@
 package com.example.udmitrataniapps.app
 
-import com.example.udmitrataniapps.model.ResponseLahanPelanggan
+import com.example.udmitrataniapps.model.ResponseArrayModel
 import com.example.udmitrataniapps.model.ResponseModel
 import retrofit2.Call
 import retrofit2.http.*
@@ -26,6 +26,13 @@ interface ApiService {
     ):Call<ResponseModel>
 
     @FormUrlEncoded
+    @POST("login-pegawai")
+    fun loginPegawai(
+        @Field("name") name: String,
+        @Field("password") password: String
+    ):Call<ResponseModel>
+
+    @FormUrlEncoded
     @POST("pelanggan/tambah-lahan")
     fun tambahLahan(
         @Header("Authorization") token : String,
@@ -36,7 +43,7 @@ interface ApiService {
     ):Call<ResponseModel>
 
     @GET("pelanggan/data-lahan")
-    fun dataLahan(@Header("Authorization") token : String):Call<ResponseLahanPelanggan>
+    fun dataLahan(@Header("Authorization") token : String):Call<ResponseArrayModel>
 
     @FormUrlEncoded
     @PUT("pelanggan/update-lahan/{id}")
@@ -55,4 +62,7 @@ interface ApiService {
         @Header("Authorization") token : String,
         @Field("id") idlahan : Int
     ):Call<ResponseModel>
+
+    @GET("pelanggan/varietas")
+    fun fetchVariatasPadi(@Header("Authorization") token : String):Call<ResponseArrayModel>
 }

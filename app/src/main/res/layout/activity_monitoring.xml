@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:backgroundTint="@color/colorPrimaryDark"
     tools:context=".petugas.MonitoringFaseActivity">
 
-    <SearchView
-        android:id="@+id/sv_cari_jadwal"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        android:paddingHorizontal="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monitoring Fase Pertumbuhan Lahan"
+            android:textColor="#fff"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+<!--    <SearchView-->
+<!--        android:id="@+id/sv_cari_jadwal"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:layoutMode="opticalBounds"-->
+<!--        android:backgroundTint="@color/colorPrimary"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        />-->
 
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="665dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@+id/sv_cari_jadwal">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -35,4 +51,4 @@
             tools:itemCount="4"
             tools:listitem="@layout/item_monitoring"/>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

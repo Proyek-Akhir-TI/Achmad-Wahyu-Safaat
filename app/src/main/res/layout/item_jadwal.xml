@@ -3,8 +3,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
-    android:elevation="5dp"
-    app:cardCornerRadius="5dp"
+    android:elevation="10dp"
+    app:cardCornerRadius="10dp"
     >
 
     <RelativeLayout
@@ -14,9 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg2"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/tv_nama_pemilik"
@@ -25,8 +24,8 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Pemilik Lahan"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
-                android:textColor="#ffffff"
                 android:textStyle="bold" />
 
             <TextView
@@ -34,7 +33,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:textColor="#ffffff"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Fase Pertumbuhan" />
 
@@ -43,8 +41,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
+                android:drawablePadding="6dp"
+                android:drawableStart="@drawable/ic_edit_24"
+                android:drawableTint="@color/colorPrimary"
                 android:fontFamily="@font/poppins"
-                android:textColor="#ffffff"
                 android:text="Detail Lokasi Lahan" />
         </LinearLayout>
 
@@ -53,14 +53,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_margin="16dp"
             android:fontFamily="@font/poppins_medium"
-            android:padding="5dp"
-            android:text="tanggal_monitoring"
-            android:textColor="#ffffff" />
+            android:textColor="@color/colorGreen"
+            android:text="tanggal_monitoring" />
+
     </RelativeLayout>
 
 

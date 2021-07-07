@@ -92,7 +92,34 @@ class SignInActivity : AppCompatActivity() {
 
 
     private fun login_pegawai() {
-        move_dahsboard_pegawai()
+        ApiConfig.instancRetrofit.loginPegawai(
+            edt_username.text.toString(),
+            edt_password.text.toString()
+        ).enqueue(object : Callback<ResponseModel>{
+            override fun onResponse(
+                call: Call<ResponseModel>,
+                response: Response<ResponseModel>
+            ) {
+                pb_login.visibility = View.GONE
+                val respon = response.body()!!
+                if (respon.success == 1){
+                    Toast.makeText(this@SignInActivity, "Success, Selamat datang "+ respon.pegawai.name, Toast.LENGTH_SHORT).show()
+                    sharedPref.saveAuthToken(respon.access_token)
+                    sharedPref.setStatusLogin(true)
+                    sharedPref.setPegawai(respon.pegawai)
+                    move_dahsboard_pegawai()
+                    finish()
+                } else {
+                    Toast.makeText(this@SignInActivity, "Error: "+respon.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                pb_login.visibility = View.GONE
+                Toast.makeText(this@SignInActivity, "Error : " +t.message, Toast.LENGTH_SHORT ).show()
+            }
+
+        })
     }
 
     private fun move_dahsboard_pelanggan() {

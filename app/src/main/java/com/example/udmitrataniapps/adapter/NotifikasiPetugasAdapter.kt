@@ -34,6 +34,7 @@ class NotifikasiPetugasAdapter() : RecyclerView.Adapter<NotifikasiPetugasAdapter
         fun bind(n: Notifikasi){
             itemView.tv_title.text = n.getTitle()
             itemView.tv_desc.text = n.getDesc()
+            itemView.tv_tgl_notif.text = n.getTgl()
         }
     }
 

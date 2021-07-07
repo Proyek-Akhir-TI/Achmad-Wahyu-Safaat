@@ -15,8 +15,7 @@
                 android:orientation="vertical"
                 android:padding="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg1">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/tv_nama_pemilik"
@@ -24,16 +23,24 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
                     android:text="Pemilik Lahan"
+                    android:textColor="@color/colorPrimary"
                     android:layout_marginBottom="8dp"
                     android:textSize="18sp"
-                    android:textColor="#ffffff"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tv_lokasi"
-                    android:textColor="#ffffff"
+                    android:id="@+id/tv_nomor_induk"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:text="Nomor Induk Pemesanan" />
+
+                <TextView
+                    android:id="@+id/tv_lokasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawablePadding="6dp"
+                    android:drawableStart="@drawable/ic_add_location_alt_24"
                     android:text="Detail Lokasi Lahan" />
             </LinearLayout>
             
@@ -43,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:padding="5dp"
-                android:textColor="@android:color/white"
+                android:textColor="@color/colorGreen"
                 android:layout_alignParentRight="true"
                 android:text="Fase Pertumbuhan"/>
         </RelativeLayout>
