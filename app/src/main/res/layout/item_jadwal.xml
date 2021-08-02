@@ -33,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
+                android:lineSpacingMultiplier="1.15"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Fase Pertumbuhan" />
 
@@ -42,17 +43,18 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:drawablePadding="6dp"
-                android:drawableStart="@drawable/ic_edit_24"
-                android:drawableTint="@color/colorPrimary"
+                android:lineSpacingMultiplier="1.2"
                 android:fontFamily="@font/poppins"
-                android:text="Detail Lokasi Lahan" />
+                android:text="Detail Lokasi Lahan"
+                app:drawableStartCompat="@drawable/ic_edit_24"
+                app:drawableTint="@color/colorPrimary" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_tanggal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_margin="16dp"
             android:fontFamily="@font/poppins_medium"
             android:textColor="@color/colorGreen"

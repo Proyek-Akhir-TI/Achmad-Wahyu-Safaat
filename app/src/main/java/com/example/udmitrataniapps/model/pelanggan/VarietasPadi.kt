@@ -1,8 +1,14 @@
 package com.example.udmitrataniapps.model.pelanggan
 
-class VarietasPadi {
-    var id = 0
-    var nama_varietas = ""
-    var deskripsi_varietas = ""
-    var foto_varietas = ""
-}
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
+
+@Parcelize
+class VarietasPadi (
+    var id : Int = 0,
+    var nama_varietas : String = "",
+    var deskripsi_varietas : String = "",
+    var foto_varietas : String = "",
+    var stok_padi: @RawValue StokPadiModel
+): Parcelable

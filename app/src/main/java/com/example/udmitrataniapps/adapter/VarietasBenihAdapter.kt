@@ -8,22 +8,30 @@ import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.model.pelanggan.VarietasPadi
 import kotlinx.android.synthetic.main.item_benih.view.*
 
-class VarietasBenihAdapter: RecyclerView.Adapter<VarietasBenihAdapter.MyViewHolder>() {
+class VarietasBenihAdapter(val callback: Callback): RecyclerView.Adapter<VarietasBenihAdapter.MyViewHolder>() {
 
     var listBenih: List<VarietasPadi> = ArrayList()
 
     fun setDataBenih(data : List<VarietasPadi>) {
         this.listBenih = data
     }
-    inner class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+    inner class MyViewHolder(itemView: View, callback: Callback):RecyclerView.ViewHolder(itemView) {
         fun bind(b: VarietasPadi){
             itemView.tv_title_benih.text = b.nama_varietas
+
+            itemView.setOnClickListener {
+                callback.onClick(b)
+            }
         }
+    }
+
+    interface Callback {
+        fun onClick(data : VarietasPadi)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         var dataBenihAdapter = LayoutInflater.from(parent.context).inflate(R.layout.item_benih, parent, false)
-        return MyViewHolder(dataBenihAdapter)
+        return MyViewHolder(dataBenihAdapter,callback)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -36,3 +44,5 @@ class VarietasBenihAdapter: RecyclerView.Adapter<VarietasBenihAdapter.MyViewHold
 
 
 }
+
+

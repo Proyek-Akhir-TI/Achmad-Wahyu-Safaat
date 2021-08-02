@@ -13,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".petugas.FormMonitoringAwal"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".pelanggan.varietaspadi.DetailVarietasBenih"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".petugas.FormMonitoringAwal"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".pelanggan.pesananpelanggan.PesananPelangganActivity" />
         <activity android:name=".pelanggan.pesananpelanggan.DetailPesananActivity" />
         <activity android:name=".pelanggan.lahanpelanggan.FormLahanActivity" />
@@ -26,7 +29,7 @@
             android:launchMode="singleTop"
             android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
         <activity
-            android:name=".pelanggan.InformasiBenihActivity"
+            android:name=".pelanggan.varietaspadi.InformasiBenihActivity"
             android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
         <activity
             android:name=".petugas.JadwalMonitoringActivity"

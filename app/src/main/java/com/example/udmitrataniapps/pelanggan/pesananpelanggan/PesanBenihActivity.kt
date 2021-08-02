@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_lahan_pelanggan.*
 import kotlinx.android.synthetic.main.activity_pesan_benih.*
 import kotlinx.android.synthetic.main.item_lahan_pelanggan.*
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
@@ -36,7 +37,8 @@ class PesanBenihActivity : AppCompatActivity() {
         sharedPref = PreferencesHelper(this)
 
         initButton()
-        fecthLahan()
+        fetchLahan()
+        fetchVarietas()
 
 
 
@@ -48,7 +50,35 @@ class PesanBenihActivity : AppCompatActivity() {
         }
     }
 
-    private fun fecthLahan() {
+    private fun fetchVarietas() {
+        ApiConfig.instancRetrofit.fetchVariatasPadi(
+            token = "Bearer ${sharedPref.fetchAuthToken()}"
+        ).enqueue(object : Callback<ResponseArrayModel>{
+            override fun onResponse(
+                call: Call<ResponseArrayModel>,
+                response: Response<ResponseArrayModel>
+            ) {
+                if (response.isSuccessful){
+                    val respon = response.body()!!
+                    val arrayVarietas = ArrayList<String>()
+                    for (varietas in respon.varietas_padi){
+                        arrayVarietas.add("${varietas.id} ${varietas.nama_varietas}")
+                    }
+
+                    val adapter = ArrayAdapter<Any>(this@PesanBenihActivity, R.layout.support_simple_spinner_dropdown_item, arrayVarietas.toTypedArray())
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    sp_benih.adapter = adapter
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseArrayModel>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+    private fun fetchLahan() {
         pb_alamat.visibility = View.VISIBLE
         ApiConfig.instancRetrofit.dataLahan(
             token = "Bearer ${sharedPref.fetchAuthToken()}"

@@ -42,6 +42,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="sans-serif-light"
             android:letterSpacing="0.03"
+            android:lineSpacingMultiplier="1.15"
             android:text="Jalan Musi No.12, Kec. Banyuwangi, Kabupaten Banyuwangi, Jawa Timur, 68432"
             android:textColor="@android:color/secondary_text_light"
             android:textSize="12sp" />

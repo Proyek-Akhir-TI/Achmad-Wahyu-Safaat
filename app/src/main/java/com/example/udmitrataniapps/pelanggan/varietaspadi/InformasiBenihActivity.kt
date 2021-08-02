@@ -1,5 +1,6 @@
-package com.example.udmitrataniapps.pelanggan
+package com.example.udmitrataniapps.pelanggan.varietaspadi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
@@ -7,14 +8,14 @@ import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.adapter.VarietasBenihAdapter
 import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
-import com.example.udmitrataniapps.model.DataBenih
 import com.example.udmitrataniapps.model.ResponseArrayModel
+import com.example.udmitrataniapps.model.pelanggan.VarietasPadi
 import kotlinx.android.synthetic.main.activity_informasi_benih.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class InformasiBenihActivity : AppCompatActivity() {
+class InformasiBenihActivity : AppCompatActivity(), VarietasBenihAdapter.Callback {
 
     lateinit var sharedPref : PreferencesHelper
     lateinit var dataAdapter : VarietasBenihAdapter
@@ -25,14 +26,14 @@ class InformasiBenihActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         sharedPref = PreferencesHelper(this)
-        var dataBenihList = ArrayList<DataBenih>()
+//        var dataBenihList = ArrayList<DataBenih>()
 
 
 
     }
 
     override fun onResume() {
-        val dataAdapter = VarietasBenihAdapter()
+        val dataAdapter = VarietasBenihAdapter(callback = this)
         fetchVarietasBenih(dataAdapter)
         dataAdapter.notifyDataSetChanged()
         super.onResume()
@@ -60,6 +61,14 @@ class InformasiBenihActivity : AppCompatActivity() {
                 }
 
             })
+    }
+
+    override fun onClick(data: VarietasPadi) {
+        startActivity(Intent(this, DetailVarietasBenih::class.java)
+            .putExtra("id" ,data.id.toString())
+            .putExtra("deskripsi", data.deskripsi_varietas)
+            .putExtra("nama_varietas", data.nama_varietas)
+        )
     }
 }
 

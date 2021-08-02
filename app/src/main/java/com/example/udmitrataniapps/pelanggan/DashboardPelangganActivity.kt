@@ -12,6 +12,7 @@ import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.pelanggan.lahanpelanggan.LahanPelangganActivity
 import com.example.udmitrataniapps.pelanggan.pesananpelanggan.PesanBenihActivity
 import com.example.udmitrataniapps.pelanggan.pesananpelanggan.PesananPelangganActivity
+import com.example.udmitrataniapps.pelanggan.varietaspadi.InformasiBenihActivity
 import kotlinx.android.synthetic.main.activity_dashboard_pelanggan.*
 
 class DashboardPelangganActivity : AppCompatActivity() {

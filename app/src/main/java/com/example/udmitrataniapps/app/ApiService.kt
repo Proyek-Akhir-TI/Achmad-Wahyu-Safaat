@@ -2,6 +2,7 @@ package com.example.udmitrataniapps.app
 
 import com.example.udmitrataniapps.model.ResponseArrayModel
 import com.example.udmitrataniapps.model.ResponseModel
+import com.example.udmitrataniapps.model.pelanggan.ResponseDetailVarietas
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -65,4 +66,10 @@ interface ApiService {
 
     @GET("pelanggan/varietas")
     fun fetchVariatasPadi(@Header("Authorization") token : String):Call<ResponseArrayModel>
+
+    @GET("pelanggan/varietas/{id}")
+    fun fetchVarietasById(
+        @Header("Authorization") token: String,
+        @Path("id") idVarietas: String?
+    ):Call<ResponseDetailVarietas>
 }
