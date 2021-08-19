@@ -103,6 +103,7 @@
                 android:text="Rencana Banyak Benih"/>
 
             <EditText
+                android:id="@+id/edt_total_benih"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_input"

@@ -72,4 +72,26 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Path("id") idVarietas: String?
     ):Call<ResponseDetailVarietas>
+
+    @FormUrlEncoded
+    @POST("pelanggan/pesan-benih")
+    fun pesanBenih(
+        @Header("Authorization") token : String,
+        @Field("lahan_pelanggan_id") lahan_pelanggan_id : Int,
+        @Field("tgl_sebar") tgl_sebar : String,
+        @Field("tgl_tanam") tgl_tanam : String,
+        @Field("varietas_padi") varietas_padi : String,
+        @Field("total_benih") total_benih : String
+        ):Call<ResponseModel>
+
+    @GET("pelanggan/detail-pesanan/{id}")
+    fun getDetailPesanan(
+        @Header("Authorization") token: String,
+        @Path("id") idPesanan : Int
+    ):Call<ResponseModel>
+
+    @GET("pelanggan/pesanans")
+    fun getPesanansPelanggan(
+        @Header("Authorization") token: String,
+    ):Call<ResponseArrayModel>
 }

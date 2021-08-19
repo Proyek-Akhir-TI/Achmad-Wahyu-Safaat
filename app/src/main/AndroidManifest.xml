@@ -13,13 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".pelanggan.varietaspadi.DetailVarietasBenih"
-            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".pelanggan.pesananpelanggan.DetailPesananActivity"></activity>
+        <activity
+            android:name=".pelanggan.varietaspadi.DetailVarietasBenih"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".petugas.FormMonitoringAwal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".pelanggan.pesananpelanggan.PesananPelangganActivity" />
-        <activity android:name=".pelanggan.pesananpelanggan.DetailPesananActivity" />
+        <activity android:name=".pelanggan.pesananpelanggan.InvoicePesananActivity" />
         <activity android:name=".pelanggan.lahanpelanggan.FormLahanActivity" />
         <activity
             android:name=".pelanggan.pesananpelanggan.PesanBenihActivity"

@@ -8,9 +8,14 @@ class StokPadiModel {
     lateinit var harga_beli_kg : String
     lateinit var harga_jual_kg : String
     lateinit var perkiraan_laba : String
-    var jumlah_stok = 0
+    var jumlah_stok = 0.0
     lateinit var tanggal_kadaluarsa : String
     lateinit var label : String
     lateinit var kelas_benih : String
     lateinit var supplier_benih : String
+    var varietas_padi : Varietas = Varietas()
+    class Varietas {
+        var id = 0
+        lateinit var nama_varietas : String
+    }
 }

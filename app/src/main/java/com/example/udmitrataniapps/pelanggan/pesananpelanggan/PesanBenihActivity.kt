@@ -1,6 +1,7 @@
 package com.example.udmitrataniapps.pelanggan.pesananpelanggan
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,7 @@ import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.model.ResponseArrayModel
+import com.example.udmitrataniapps.model.ResponseModel
 import kotlinx.android.synthetic.main.activity_form_lahan.*
 import kotlinx.android.synthetic.main.activity_lahan_pelanggan.*
 import kotlinx.android.synthetic.main.activity_pesan_benih.*
@@ -43,11 +45,41 @@ class PesanBenihActivity : AppCompatActivity() {
 
 
         btn_pesan_benih.setOnClickListener {
-            val text = sp_lahan.selectedItem.toString().split(" ")
-            val txtTrim = text[3]
-            Log.d("id spinner", txtTrim)
+
             Log.d("id spinner", btn_tgl_sebar.text.toString())
+            pesanBenih()
+
         }
+    }
+
+    private fun pesanBenih() {
+        val textLahan = sp_lahan.selectedItem.toString().split(" ")
+        val idLahan = textLahan[3]
+        val textVarietas = sp_benih.selectedItem.toString().split( " ")
+        val idVarietas = textVarietas[0]
+
+        ApiConfig.instancRetrofit.pesanBenih(
+            token = "Bearer ${sharedPref.fetchAuthToken()}",
+            lahan_pelanggan_id = idLahan.toInt(),
+            btn_tgl_sebar.text.toString(),
+            btn_tgl_tanam.text.toString(),
+            idVarietas,
+            edt_total_benih.text.toString()
+        ).enqueue(object : Callback<ResponseModel>{
+            override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
+                if (response.isSuccessful){
+                    startActivity(Intent(this@PesanBenihActivity, InvoicePesananActivity::class.java)
+                        .putExtra("id_pesanan", response.body()!!.pesanan.id)
+                        .putExtra("nama_varietas", textVarietas[1]))
+                    finish()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                Toast.makeText(this@PesanBenihActivity, t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
 
     private fun fetchVarietas() {

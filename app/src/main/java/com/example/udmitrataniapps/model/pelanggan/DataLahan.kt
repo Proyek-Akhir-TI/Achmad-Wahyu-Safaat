@@ -1,6 +1,7 @@
 package com.example.udmitrataniapps.model.pelanggan
 
 import android.os.Parcelable
+import com.example.udmitrataniapps.model.auth.PelangganModel
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

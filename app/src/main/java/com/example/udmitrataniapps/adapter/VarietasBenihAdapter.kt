@@ -42,7 +42,6 @@ class VarietasBenihAdapter(val callback: Callback): RecyclerView.Adapter<Varieta
         return listBenih.size
     }
 
-
 }
 
 
