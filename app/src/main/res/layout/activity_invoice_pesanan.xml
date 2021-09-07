@@ -43,7 +43,7 @@
                     android:layout_marginVertical="10dp"
                     android:layout_marginEnd="12dp"
                     android:background="@drawable/custom_round_title"
-                    android:backgroundTint="#A4FA7854"
+                    android:backgroundTint="#4CAF50"
                     android:paddingHorizontal="20dp"
                     android:paddingVertical="6dp"
                     android:text="belum bayar"

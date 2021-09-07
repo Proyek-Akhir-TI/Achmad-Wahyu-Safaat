@@ -2,6 +2,7 @@ package com.example.udmitrataniapps.app
 
 import com.example.udmitrataniapps.model.ResponseArrayModel
 import com.example.udmitrataniapps.model.ResponseModel
+import com.example.udmitrataniapps.model.pegawai.ResponseJadwalMonitoring
 import com.example.udmitrataniapps.model.pelanggan.ResponseDetailVarietas
 import retrofit2.Call
 import retrofit2.http.*
@@ -94,4 +95,24 @@ interface ApiService {
     fun getPesanansPelanggan(
         @Header("Authorization") token: String,
     ):Call<ResponseArrayModel>
+
+    @GET("petugas/jadwal-monitoring-fase-awal")
+    fun getJadwalMonitoringFaseAwal(
+        @Header("Authorization") token: String,
+    ):Call<ResponseJadwalMonitoring>
+
+    @GET("petugas/jadwal-monitoring-fase-vegetatif")
+    fun getJadwalMonitoringFaseVegetatif(
+        @Header("Authorization") token: String,
+    ):Call<ResponseJadwalMonitoring>
+
+    @GET("petugas/jadwal-monitoring-fase-berbunga")
+    fun getJadwalMonitoringFaseBerbunga(
+        @Header("Authorization") token: String,
+    ):Call<ResponseJadwalMonitoring>
+
+    @GET("petugas/jadwal-monitoring-fase-masak")
+    fun getJadwalMonitoringFaseMasak(
+        @Header("Authorization") token: String,
+    ):Call<ResponseJadwalMonitoring>
 }

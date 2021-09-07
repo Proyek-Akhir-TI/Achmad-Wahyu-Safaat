@@ -30,29 +30,30 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btn_login.setOnClickListener{
+        btn_login.setOnClickListener {
             form_validation()
             pb_login.visibility = View.VISIBLE
-            if (sw_login.isChecked){
-                login_pelanggan()
-            } else
-                login_pegawai()
+            if (sw_login.isChecked)  login_pegawai() else login_pelanggan()
         }
     }
 
     override fun onStart() {
         super.onStart()
-        if (sharedPref.getStatusLogin()){
+        if (sharedPref.getStatusLoginPegawai()){
+            move_dahsboard_pegawai()
+        }
+
+        if (sharedPref.getStatusLoginPelanggan()){
             move_dahsboard_pelanggan()
         }
     }
 
     private fun form_validation() {
-        if (edt_username.text?.isEmpty()!!){
+        if (edt_username.text?.isEmpty()!!) {
             edt_username.error = "Nama Pengguna wajib diisi"
             edt_username.requestFocus()
             return
-        } else if (edt_password.text?.isEmpty()!!){
+        } else if (edt_password.text?.isEmpty()!!) {
             edt_password.error = "Password wajib diisi"
             edt_password.requestFocus()
             return
@@ -63,28 +64,37 @@ class SignInActivity : AppCompatActivity() {
         ApiConfig.instancRetrofit.loginPelanggan(
             edt_username.text.toString(),
             edt_password.text.toString()
-        ).enqueue(object : Callback<ResponseModel>{
+        ).enqueue(object : Callback<ResponseModel> {
             override fun onResponse(
                 call: Call<ResponseModel>,
                 response: Response<ResponseModel>
             ) {
                 pb_login.visibility = View.GONE
                 val respon = response.body()!!
-                if (respon.success == 1){
-                    Toast.makeText(this@SignInActivity, "Success, Selamat datang "+ respon.pelanggan.name, Toast.LENGTH_SHORT).show()
+                if (respon.success == 1) {
+                    Toast.makeText(
+                        this@SignInActivity,
+                        "Success, Selamat datang " + respon.pelanggan.name,
+                        Toast.LENGTH_SHORT
+                    ).show()
                     sharedPref.saveAuthToken(respon.access_token)
-                    sharedPref.setStatusLogin(true)
+                    sharedPref.setStatusLoginPelanggan(true)
                     sharedPref.setPelanggan(respon.pelanggan)
                     move_dahsboard_pelanggan()
                     finish()
                 } else {
-                    Toast.makeText(this@SignInActivity, "Error: "+respon.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@SignInActivity,
+                        "Error: " + respon.message,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 
             override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
                 pb_login.visibility = View.GONE
-                Toast.makeText(this@SignInActivity, "Error : " +t.message, Toast.LENGTH_SHORT ).show()
+                Toast.makeText(this@SignInActivity, "Error : " + t.message, Toast.LENGTH_SHORT)
+                    .show()
             }
 
         })
@@ -95,28 +105,37 @@ class SignInActivity : AppCompatActivity() {
         ApiConfig.instancRetrofit.loginPegawai(
             edt_username.text.toString(),
             edt_password.text.toString()
-        ).enqueue(object : Callback<ResponseModel>{
+        ).enqueue(object : Callback<ResponseModel> {
             override fun onResponse(
                 call: Call<ResponseModel>,
                 response: Response<ResponseModel>
             ) {
                 pb_login.visibility = View.GONE
                 val respon = response.body()!!
-                if (respon.success == 1){
-                    Toast.makeText(this@SignInActivity, "Success, Selamat datang "+ respon.pegawai.name, Toast.LENGTH_SHORT).show()
+                if (respon.success == 1) {
+                    Toast.makeText(
+                        this@SignInActivity,
+                        "Success, Selamat datang " + respon.pegawai.name,
+                        Toast.LENGTH_SHORT
+                    ).show()
                     sharedPref.saveAuthToken(respon.access_token)
-                    sharedPref.setStatusLogin(true)
+                    sharedPref.setStatusLoginPegawai(true)
                     sharedPref.setPegawai(respon.pegawai)
                     move_dahsboard_pegawai()
                     finish()
                 } else {
-                    Toast.makeText(this@SignInActivity, "Error: "+respon.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@SignInActivity,
+                        "Error: " + respon.message,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 
             override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
                 pb_login.visibility = View.GONE
-                Toast.makeText(this@SignInActivity, "Error : " +t.message, Toast.LENGTH_SHORT ).show()
+                Toast.makeText(this@SignInActivity, "Error : " + t.message, Toast.LENGTH_SHORT)
+                    .show()
             }
 
         })
@@ -128,7 +147,6 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun move_dahsboard_pegawai() {
-        Toast.makeText(this, "Selamat datang Sapardi", Toast.LENGTH_SHORT).show()
         startActivity(Intent(this, DashboardPetugasActivity::class.java))
         finish()
     }

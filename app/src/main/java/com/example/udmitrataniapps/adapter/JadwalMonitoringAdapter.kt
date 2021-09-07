@@ -31,8 +31,8 @@ class JadwalMonitoringAdapter: RecyclerView.Adapter<JadwalMonitoringAdapter.MyVi
 
     inner class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         fun bind(j: JadwalMonitoring){
+
             itemView.tv_nama_pemilik.text = j.getNamaPemilik()
-            itemView.tv_fase.text = j.getFase()
             itemView.tv_tanggal.text = j.getTanggal()
             itemView.tv_lokasi.text = j.getLokasi()
         }

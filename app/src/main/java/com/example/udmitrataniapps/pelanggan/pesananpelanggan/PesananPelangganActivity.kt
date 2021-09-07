@@ -51,12 +51,8 @@ class PesananPelangganActivity : AppCompatActivity(), PesanansPelangganAdapter.C
             })
     }
 
-    override fun onClick(pesanan: Pesanan) {
-        when (pesanan.status_pesanan){
-            "Belum Bayar" -> startActivity(Intent(this, InvoicePesananActivity::class.java)
-                .putExtra("id_pesanan", pesanan.id))
-            else -> startActivity(Intent(this, DetailPesananActivity::class.java)
-                .putExtra("id_pesanan", pesanan.id))
-        }
+    override fun onClick(data: Pesanan) {
+        startActivity(Intent(this, InvoicePesananActivity::class.java)
+            .putExtra("id_pesanan", data.id))
     }
 }

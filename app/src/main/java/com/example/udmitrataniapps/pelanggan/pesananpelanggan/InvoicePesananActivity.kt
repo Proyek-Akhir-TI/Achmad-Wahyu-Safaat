@@ -1,5 +1,6 @@
 package com.example.udmitrataniapps.pelanggan.pesananpelanggan
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -30,10 +31,12 @@ class InvoicePesananActivity : AppCompatActivity() {
             token = "Bearer ${sharedPref.fetchAuthToken()}",
             intent.getIntExtra("id_pesanan", 0)
         ).enqueue(object : Callback<ResponseModel>{
+            @SuppressLint("ResourceAsColor")
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
                 if (response.isSuccessful){
                     val respon = response.body()!!.pesanan
-                    tv_status_pembayaran.text   = respon.status_pesanan
+                    if (respon.status_pesanan != "Menunggu Pembayaran")
+                        tv_status_pembayaran.text = "Lunas" else tv_status_pembayaran.text   = respon.status_pesanan
                     tv_tanggal_pesanan.text     = respon.created_at
                     tv_varietas_padi.text       = respon.stok_padi.varietas_padi.nama_varietas
                     tv_ttl_harga_benih.text     = respon.total_harga_benih

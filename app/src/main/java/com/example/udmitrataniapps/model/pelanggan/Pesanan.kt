@@ -14,6 +14,5 @@ class Pesanan {
     lateinit var status_pesanan : String
     lateinit var created_at : String
     lateinit var nama_lahan : String
-    var lahan_pelanggan = DataLahan(id = 0, nama_lahan = "", alamat = "", luas_lahan = 0, sejarah_lahan = "")
     var stok_padi = StokPadiModel()
 }

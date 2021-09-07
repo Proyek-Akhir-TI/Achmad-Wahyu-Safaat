@@ -10,6 +10,7 @@ import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.SignInActivity
 import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.pelanggan.lahanpelanggan.LahanPelangganActivity
+import com.example.udmitrataniapps.pelanggan.pesananpelanggan.DetailPesananActivity
 import com.example.udmitrataniapps.pelanggan.pesananpelanggan.PesanBenihActivity
 import com.example.udmitrataniapps.pelanggan.pesananpelanggan.PesananPelangganActivity
 import com.example.udmitrataniapps.pelanggan.varietaspadi.InformasiBenihActivity
@@ -32,9 +33,9 @@ class DashboardPelangganActivity : AppCompatActivity() {
 
 
         tv_keluar.setOnClickListener(){
-            sharedPref.setStatusLogin(false)
-            finish()
+            sharedPref.setStatusLoginPelanggan(false)
             startActivity(Intent(this, SignInActivity::class.java))
+            finish()
         }
 
         menu_informasi_benih.setOnClickListener(){
@@ -52,8 +53,12 @@ class DashboardPelangganActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        menu_riwayat_monitoring.setOnClickListener {
+        menu_riwayat_pesanan.setOnClickListener {
             startActivity(Intent(this, PesananPelangganActivity::class.java))
+        }
+
+        menu_riwayat_monitoring.setOnClickListener {
+            startActivity(Intent(this, DetailPesananActivity::class.java))
         }
     }
 

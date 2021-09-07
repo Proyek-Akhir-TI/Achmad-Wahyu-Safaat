@@ -106,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="@android:color/tertiary_text_light"
-                    android:text="@string/login_sebagai_pelanggan"
+                    android:text="Login Sebagai Pegawai"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 <Button

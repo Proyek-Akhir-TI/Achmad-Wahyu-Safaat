@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pelanggan.pesananpelanggan.DetailPesananActivity">
+    tools:context=".petugas.fragment.jadwalmonitoring.JadwalFaseMasakFragment">
 
     <LinearLayout
+        android:id="@+id/dialog_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:orientation="vertical">
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/image"
-            android:layout_width="250dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="50dp"
-            android:src="@drawable/gif_monitoring"/>
-
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/calendar"/>
         <TextView
             android:layout_below="@+id/image"
             android:layout_width="match_parent"
@@ -29,7 +27,7 @@
             android:textColor="@color/colorTextBlack"
             android:textSize="20sp"
             android:fontFamily="@font/poppins"
-            android:text="Hasil Monitoring Belum Tersedia" />
+            android:text="Jadwal Belum Tersedia" />
 
         <TextView
             android:layout_width="match_parent"
@@ -40,6 +38,16 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/poppins"
-            android:text="Belum ada hasil monitoring pada pesanan anda, silahkan kembali lagi nanti atau hubungi customer sevice untuk informasi lebih lanjut" />
+            android:text="Belum ada jadwal monitoring fase masak pada bulan ini, silahkan kembali lagi nanti" />
     </LinearLayout>
-</RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_jadwal_fase_masak"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:itemCount="7"
+        tools:listitem="@layout/item_jadwal"
+        android:padding="12dp"/>
+
+</FrameLayout>

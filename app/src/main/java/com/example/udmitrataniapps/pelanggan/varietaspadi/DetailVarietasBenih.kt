@@ -1,16 +1,11 @@
 package com.example.udmitrataniapps.pelanggan.varietaspadi
 
-import android.annotation.SuppressLint
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout.JUSTIFICATION_MODE_INTER_WORD
-import android.util.Log
 import android.widget.Toast
 import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
-import com.example.udmitrataniapps.model.ResponseArrayModel
 import com.example.udmitrataniapps.model.pelanggan.ResponseDetailVarietas
 import kotlinx.android.synthetic.main.activity_detail_varietas_benih.*
 import retrofit2.Call

@@ -17,21 +17,25 @@ class PesanansPelangganAdapter(val callback: Callback) : RecyclerView.Adapter<Pe
     }
 
     inner class PesanansViewHolder(itemView: View, callback: Callback): RecyclerView.ViewHolder(itemView) {
-        fun bind(pesanan: Pesanan) {
-            itemView.tv_nama_lahan.text = pesanan.nama_lahan
-            itemView.tv_pesanan_nomor_induk.text = pesanan.nomor_induk ?: "Pesanan Belum Terkonfirmasi"
-            itemView.tv_pesanan_status_pesanan.text = pesanan.status_pesanan
-            itemView.tv_pesanan_aktivitas.text = pesanan.created_at
+        fun bind(data: Pesanan) {
+            itemView.tv_nama_lahan.text = data.nama_lahan
+            itemView.tv_pesanan_nomor_induk.text = data.nomor_induk ?: "Pesanan Belum Terkonfirmasi"
+            if (data.status_pesanan == "Menunggu Pembayaran") {
+            itemView.tv_pesanan_status_pesanan.text = data.status_pesanan
+            } else {
+                itemView.tv_pesanan_status_pesanan.text = "Lunas"
+            }
+            itemView.tv_pesanan_aktivitas.text = data.created_at
 
             itemView.setOnClickListener {
-                callback.onClick(pesanan)
+                callback.onClick(data)
             }
         }
 
     }
 
     interface Callback {
-        fun onClick(pesanan: Pesanan)
+        fun onClick(data: Pesanan)
     }
 
 

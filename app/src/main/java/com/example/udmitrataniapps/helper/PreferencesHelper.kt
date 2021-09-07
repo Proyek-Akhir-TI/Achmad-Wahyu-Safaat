@@ -5,15 +5,16 @@ import android.content.SharedPreferences
 import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.model.auth.PegawaiModel
 import com.example.udmitrataniapps.model.auth.PelangganModel
+import com.example.udmitrataniapps.pelanggan.varietaspadi.InformasiBenihActivity
 import com.google.gson.Gson
-import java.nio.channels.spi.AbstractSelectionKey
 
-class PreferencesHelper (context: Context) {
+class PreferencesHelper(context: Context) {
     private var sharedPref : SharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
 
     companion object {
         const val USER_TOKEN = "user_token"
-        const val IS_LOGIN = "IS_LOGIN"
+        const val IS_LOGIN_PEGAWAI = "IS_LOGIN_PEGAWAI"
+        const val IS_LOGIN_PELANGGAN = "IS_LOGIN_PELANGGAN"
         const val PELANGGAN = "pelanggan"
         const val PEGAWAI = "pegawai"
     }
@@ -29,14 +30,24 @@ class PreferencesHelper (context: Context) {
         return sharedPref.getString(USER_TOKEN, null)
     }
 
-    fun setStatusLogin(value: Boolean){
+    fun setStatusLoginPelanggan(value: Boolean){
         val editor = sharedPref.edit()
-        editor.putBoolean(IS_LOGIN.toString(), value)
+        editor.putBoolean(IS_LOGIN_PELANGGAN.toString(), value)
             .apply()
     }
 
-    fun getStatusLogin() : Boolean{
-        return sharedPref.getBoolean(IS_LOGIN, false)
+    fun getStatusLoginPelanggan() : Boolean{
+        return sharedPref.getBoolean(IS_LOGIN_PELANGGAN, false)
+    }
+
+    fun setStatusLoginPegawai(value: Boolean){
+        val editor = sharedPref.edit()
+        editor.putBoolean(IS_LOGIN_PEGAWAI.toString(), value)
+            .apply()
+    }
+
+    fun getStatusLoginPegawai() : Boolean{
+        return sharedPref.getBoolean(IS_LOGIN_PEGAWAI, false)
     }
 
     fun setPelanggan(value: PelangganModel){
