@@ -13,8 +13,7 @@ import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.model.pegawai.ResponseJadwalMonitoring
-import com.example.udmitrataniapps.petugas.fragment.adapters.JadwalFaseAwalFragmentAdapter
-import com.example.udmitrataniapps.petugas.fragment.adapters.JadwalFaseVegetatifFragmentAdapter
+import com.example.udmitrataniapps.petugas.fragment.adapters.jadwaladapters.JadwalFaseVegetatifFragmentAdapter
 import com.example.udmitrataniapps.petugas.fragment.jadwalmonitoring.viewmodel.JadwalFaseVegetatifViewModel
 import kotlinx.android.synthetic.main.jadwal_fase_vegetatif_fragment.*
 import retrofit2.Call

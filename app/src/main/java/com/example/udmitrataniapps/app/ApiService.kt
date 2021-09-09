@@ -115,4 +115,9 @@ interface ApiService {
     fun getJadwalMonitoringFaseMasak(
         @Header("Authorization") token: String,
     ):Call<ResponseJadwalMonitoring>
+
+    @GET("petugas/get-monitoring-awal-today")
+    fun getMonitoringAwalToday(
+        @Header("Authorization") token: String,
+    ):Call<ResponseJadwalMonitoring>
 }

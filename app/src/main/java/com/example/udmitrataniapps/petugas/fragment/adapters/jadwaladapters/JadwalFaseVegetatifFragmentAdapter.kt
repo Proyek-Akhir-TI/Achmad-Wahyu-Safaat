@@ -1,4 +1,4 @@
-package com.example.udmitrataniapps.petugas.fragment.adapters
+package com.example.udmitrataniapps.petugas.fragment.adapters.jadwaladapters
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -9,12 +9,8 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.model.pegawai.JadwalMonitoring
-import com.example.udmitrataniapps.model.pegawai.ResponseJadwalMonitoring
 import kotlinx.android.synthetic.main.item_jadwal.view.*
-import kotlinx.android.synthetic.main.item_lahan_pelanggan.view.*
 import java.text.SimpleDateFormat
-import java.time.format.DateTimeFormatter
-import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -46,14 +42,14 @@ class JadwalFaseVegetatifFragmentAdapter() : RecyclerView.Adapter<JadwalFaseVege
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): JadwalFaseVegetatifFragmentAdapter.ViewHolder {
+    ): ViewHolder {
         val viewJadwalMonitoring = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_jadwal, parent, false)
         return ViewHolder(viewJadwalMonitoring)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun onBindViewHolder(holder: JadwalFaseVegetatifFragmentAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(jadwalMonitoring[position])
     }
 

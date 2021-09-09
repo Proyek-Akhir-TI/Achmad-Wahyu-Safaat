@@ -8,16 +8,4 @@ class JadwalMonitoring {
     lateinit var fase_berbunga : String
     lateinit var fase_masak : String
     var pesanan : Pesanan = Pesanan()
-    class Pesanan {
-        var lahan_pelanggan : LahanPelanggan = LahanPelanggan()
-        class LahanPelanggan {
-            lateinit var alamat : String
-            var pelanggan : Pelanggan = Pelanggan()
-
-            class Pelanggan {
-                lateinit var nama_lengkap : String
-                lateinit var telepon : String
-            }
-        }
-    }
 }

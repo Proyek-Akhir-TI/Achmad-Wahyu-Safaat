@@ -13,14 +13,10 @@ import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.model.pegawai.ResponseJadwalMonitoring
-import com.example.udmitrataniapps.petugas.fragment.adapters.JadwalFaseBerbungaFragmentAdapter
-import com.example.udmitrataniapps.petugas.fragment.adapters.JadwalFaseMasakFragmentAdapter
-import com.example.udmitrataniapps.petugas.fragment.adapters.JadwalFaseVegetatifFragmentAdapter
+import com.example.udmitrataniapps.petugas.fragment.adapters.jadwaladapters.JadwalFaseMasakFragmentAdapter
 import com.example.udmitrataniapps.petugas.fragment.jadwalmonitoring.viewmodel.JadwalFaseMasakViewModel
-import kotlinx.android.synthetic.main.jadwal_fase_berbunga_fragment.*
 import kotlinx.android.synthetic.main.jadwal_fase_berbunga_fragment.dialog_empty
 import kotlinx.android.synthetic.main.jadwal_fase_masak_fragment.*
-import kotlinx.android.synthetic.main.jadwal_fase_vegetatif_fragment.*
 import retrofit2.Call
 import retrofit2.Response
 
