@@ -31,6 +31,7 @@ class SignUpActivity : AppCompatActivity() {
             edt_username.text.toString(),
             edt_password.text.toString(),
             edt_nik.text.toString(),
+            "laki-laki",
             edt_alamat.text.toString(),
             edt_phone.text.toString()
         ).enqueue(object : Callback<ResponseModel>{

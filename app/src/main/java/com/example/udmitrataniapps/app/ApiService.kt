@@ -16,6 +16,7 @@ interface ApiService {
         @Field("name") name:String,
         @Field("password") password:String,
         @Field("nik") nik:String,
+        @Field("jenis_kelamin") jenis_kelamin: String,
         @Field("alamat") alamat:String,
         @Field("telepon") telepon:String,
         ):Call<ResponseModel>

@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.callbackFlow
 class MonitoringAwalAdapter(val callback : Callback) : RecyclerView.Adapter<MonitoringAwalAdapter.MyViewHolder>() {
     inner class MyViewHolder(itemView: View, callback: Callback) : RecyclerView.ViewHolder(itemView) {
         fun bind(monitoring: Pesanan) {
-            itemView.tv_nama_pemilik.text = monitoring.lahan_pelanggan.pelanggan.nama_lengkap
+            itemView.tv_nama_pemilik.text = monitoring.lahan_pelanggan.pelanggan.nama_lengkap ?: "Lahan Tidak Tersedia di daftar lahan pelanggan"
             itemView.tv_nomor_induk.text = monitoring.nomor_induk ?: "Nomor Induk Belum Tesedia"
             itemView.tv_lokasi.text = monitoring.lahan_pelanggan.alamat
             if (monitoring.status_pesanan == "Lunas")

@@ -1,5 +1,7 @@
 package com.example.udmitrataniapps.model.pelanggan
 
+import com.example.udmitrataniapps.model.pegawai.Pesanan
+
 class Pesanan {
     var id = 0
     var nomor_induk : String? = null
@@ -15,4 +17,8 @@ class Pesanan {
     lateinit var created_at : String
     lateinit var nama_lahan : String
     var stok_padi = StokPadiModel()
+    var lahan_pelanggan = LahanPelanggan()
+    class LahanPelanggan{
+        lateinit var nama_lahan: String
+    }
 }

@@ -38,6 +38,7 @@ class InvoicePesananActivity : AppCompatActivity() {
                     if (respon.status_pesanan != "Menunggu Pembayaran")
                         tv_status_pembayaran.text = "Lunas" else tv_status_pembayaran.text   = respon.status_pesanan
                     tv_tanggal_pesanan.text     = respon.created_at
+                    tv_nama_lahan.text          = respon.lahan_pelanggan.nama_lahan
                     tv_varietas_padi.text       = respon.stok_padi.varietas_padi.nama_varietas
                     tv_ttl_harga_benih.text     = respon.total_harga_benih
                     tv_ttl_biaya_jasa.text      = respon.total_harga_jasa

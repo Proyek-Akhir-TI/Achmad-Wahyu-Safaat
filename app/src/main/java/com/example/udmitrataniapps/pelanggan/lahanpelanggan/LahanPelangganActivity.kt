@@ -68,29 +68,4 @@ class LahanPelangganActivity : AppCompatActivity(), LahanPelangganAdapter.Callba
             .putExtra("dataLahan", data))
     }
 
-    override fun onDelete(data: DataLahan) {
-        ApiConfig.instancRetrofit.deleteLahan(
-            token = "Bearer ${sharedPref.fetchAuthToken()}",
-            data.id
-        ).enqueue(object : Callback<ResponseModel>{
-            override fun onResponse(
-                call: Call<ResponseModel>,
-                response: Response<ResponseModel>
-            ) {
-                if (response.isSuccessful){
-                    Toast.makeText(this@LahanPelangganActivity, "Data Berhasil Dihapus", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@LahanPelangganActivity, LahanPelangganActivity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-                    startActivity(intent)
-                }
-            }
-
-            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
-                Toast.makeText(this@LahanPelangganActivity, "error ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-
-        })
-    }
-
-
 }

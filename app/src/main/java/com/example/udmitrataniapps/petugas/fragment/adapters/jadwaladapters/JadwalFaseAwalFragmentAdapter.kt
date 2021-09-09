@@ -31,9 +31,9 @@ class JadwalFaseAwalFragmentAdapter() : RecyclerView.Adapter<JadwalFaseAwalFragm
             dateFormat.applyPattern("dd-MM-yyyy")
             val newDateFormat = dateFormat.format(convert)
 
-            itemView.tv_phone.text = data.pesanan.lahan_pelanggan.pelanggan.telepon
-            itemView.tv_nama_pemilik.text = data.pesanan.lahan_pelanggan.pelanggan.nama_lengkap
-            itemView.tv_lokasi.text = "Alamat : " + data.pesanan.lahan_pelanggan.alamat
+            itemView.tv_phone.text = data.pesanan.lahan_pelanggan.pelanggan.telepon ?: "informasi tidak Tersedia"
+            itemView.tv_nama_pemilik.text = data.pesanan.lahan_pelanggan.pelanggan.nama_lengkap ?: "informasi tidak Tersedia"
+            itemView.tv_lokasi.text = "Alamat : " + data.pesanan.lahan_pelanggan.alamat ?: "informasi tidak Tersedia"
             itemView.tv_tanggal.text = newDateFormat
         }
 
