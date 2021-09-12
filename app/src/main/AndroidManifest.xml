@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".petugas.FormMonitoringLanjut"></activity>
+        <activity android:name=".petugas.FormMonitoringLanjut"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".pelanggan.pesananpelanggan.DetailPesananActivity" />
         <activity
             android:name=".pelanggan.varietaspadi.DetailVarietasBenih"

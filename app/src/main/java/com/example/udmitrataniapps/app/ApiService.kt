@@ -4,8 +4,11 @@ import com.example.udmitrataniapps.model.ResponseArrayModel
 import com.example.udmitrataniapps.model.ResponseModel
 import com.example.udmitrataniapps.model.pegawai.ResponseJadwalMonitoring
 import com.example.udmitrataniapps.model.pelanggan.ResponseDetailVarietas
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
+
 
 interface ApiService {
 
@@ -121,4 +124,68 @@ interface ApiService {
     fun getMonitoringAwalToday(
         @Header("Authorization") token: String,
     ):Call<ResponseJadwalMonitoring>
+
+    @GET("petugas/get-monitoring-vegetatif-today")
+    fun getMonitoringVegetatifToday(
+        @Header("Authorization") token: String,
+    ):Call<ResponseJadwalMonitoring>
+
+    @GET("petugas/get-monitoring-berbunga-today")
+    fun getMonitoringBerbungaToday(
+        @Header("Authorization") token: String,
+    ):Call<ResponseJadwalMonitoring>
+
+    @GET("petugas/get-monitoring-masak-today")
+    fun getMonitoringMasakToday(
+        @Header("Authorization") token: String,
+    ):Call<ResponseJadwalMonitoring>
+
+    @GET("petugas/detail-pesanan/{id}")
+    fun getDetailLahan(
+        @Header("Authorization") token: String,
+        @Path("id") idPesanan : Int
+    ):Call<ResponseModel>
+
+    @FormUrlEncoded
+    @POST("petugas/monitoring-awal")
+    fun sendMonitoringAwal(
+        @Header("Authorization") token : String,
+        @Field("pesanan_id") pesanan_id : Int,
+        @Field("letak_areal") letak_areal : String,
+        @Field("luas_areal") luas_areal : String,
+        @Field("isolasi") isolasi : String,
+        @Field("sejarah_lapang") sejarah_lapang : String,
+        @Field("asal_jumlah_benih") asal_jumlah_benih : String,
+        @Field("catatan") catatan : String,
+        @Field("kesimpulan") kesimpulan : String,
+    ):Call<ResponseModel>
+
+    @Multipart
+    @POST("petugas/monitoring-lanjut")
+    fun sendMonitoringLanjut(
+        @Header("Authorization") token : String,
+        @Part("pesanan_id") pesanan_id : RequestBody,
+        @Part("pemeriksaan_awal_id") pemeriksaan_awal : RequestBody,
+        @Part("jenis_pemeriksaan") jenis_pemeriksaan : RequestBody,
+        @Part("isolasi_timur") isolasi_timur : RequestBody,
+        @Part("isolasi_barat") isolasi_barat : RequestBody,
+        @Part("isolasi_selatan") isolasi_selatan : RequestBody,
+        @Part("isolasi_utara") isolasi_utara : RequestBody,
+        @Part("barier") barier : RequestBody,
+        @Part("sifat_penanaman") sifat_penanaman : RequestBody,
+        @Part("serangan_hama") serangan_hama : RequestBody,
+        @Part("perkiraan_produksi") perkiraan_produksi : RequestBody,
+        @Part("jumlah_contoh_pemeriksaan") jumlah_contoh_pemeriksaan : RequestBody,
+        @Part image : MultipartBody.Part
+    ):Call<ResponseModel>
+
+//    @Multipart
+//    @FormUrlEncoded
+//    @POST("petugas/monitoring-lanjut")
+//    open fun editUser(
+//        @Header("Authorization") authorization: String?,
+//        @Part("file\"; filename=\"pp.png\" ") file: RequestBody?,
+//        @Part("FirstName") fname: RequestBody?,
+//        @Part("Id") id: RequestBody?
+//    ): Call<User?>?
 }

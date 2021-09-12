@@ -18,7 +18,21 @@ class Pesanan {
     lateinit var nama_lahan : String
     var stok_padi = StokPadiModel()
     var lahan_pelanggan = LahanPelanggan()
+    var pemeriksaan_awal = PemeriksaanAwal()
+
+    class PemeriksaanAwal {
+        var id = 0
+    }
+
     class LahanPelanggan{
         lateinit var nama_lahan: String
+        lateinit var alamat: String
+        lateinit var luas_lahan : String
+        var pelanggan : Pelanggan = Pelanggan()
+
+        class Pelanggan {
+            var nama_lengkap : String? = null
+            var telepon : String? = null
+        }
     }
 }

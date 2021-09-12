@@ -104,7 +104,7 @@ class PesanBenihActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ResponseArrayModel>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(this@PesanBenihActivity, t.message, Toast.LENGTH_SHORT).show()
             }
 
         })

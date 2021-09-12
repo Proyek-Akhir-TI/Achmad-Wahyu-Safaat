@@ -43,7 +43,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_jadwal_fase_berbunga"
+        android:id="@+id/rv_monitoring_vegetatif"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"

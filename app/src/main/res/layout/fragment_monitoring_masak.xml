@@ -6,7 +6,7 @@
     tools:context=".petugas.fragment.monitoringfragment.MonitoringMasakFragment">
 
     <LinearLayout
-        android:id="@+id/dialog_empty"
+        android:id="@+id/dialog_masak_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -43,7 +43,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_jadwal_fase_berbunga"
+        android:id="@+id/rv_monitoring_masak"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"

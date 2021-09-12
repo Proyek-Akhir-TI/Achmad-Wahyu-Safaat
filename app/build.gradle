@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.udmitrataniapps"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -68,5 +68,14 @@ dependencies {
 
 //    maps implement
     implementation 'com.google.android.gms:play-services-location:18.0.0'
+
+//    image library coil
+    implementation("io.coil-kt:coil:1.1.1")
+
+    // Image picker
+    implementation 'com.github.Drjacky:ImagePicker:2.1.13'
+
+//    helper by tisto's
+    implementation 'com.github.TistoW:MyHelper:1.1.5'
 
 }

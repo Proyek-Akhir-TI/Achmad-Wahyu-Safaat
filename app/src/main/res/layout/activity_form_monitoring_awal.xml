@@ -64,6 +64,7 @@
                         android:textColor="@color/colorTextBlack" />
 
                     <TextView
+                        android:id="@+id/tv_nomor_induk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_above="@id/div_detail"
@@ -78,6 +79,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_lokasi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="6dp"
@@ -94,6 +96,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/tv_luas_lahan"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Luas Lahan : 1 hektar" />
@@ -106,6 +109,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/tv_rencana_benih"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Benih rencana : Impari 32" />
@@ -113,11 +117,13 @@
                         </LinearLayout>
 
                         <TextView
+                            android:id="@+id/tv_tgl_sebar_monitoring"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Rencana sebar benih : 2 Maret 2021" />
 
                         <TextView
+                            android:id="@+id/tv_tgl_tanam_monitoring"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Rencana tanam benih : 28 Maret 2021" />
@@ -192,6 +198,7 @@
                     android:paddingHorizontal="12dp">
 
                     <CheckBox
+                        android:id="@+id/cb_letak_areal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:checked="false"
@@ -199,6 +206,7 @@
                         android:text="Kebenaran Letak Areal" />
 
                     <CheckBox
+                        android:id="@+id/cb_luas_areal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:checked="false"
@@ -210,6 +218,7 @@
                         android:layout_height="wrap_content">
 
                         <CheckBox
+                            android:id="@+id/cb_isolasi"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -218,6 +227,7 @@
                             android:text="Isolasi" />
 
                         <CheckBox
+                            android:id="@+id/cb_sejarah"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -227,6 +237,7 @@
                     </LinearLayout>
 
                     <CheckBox
+                        android:id="@+id/cb_asal_luas"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:checked="false"
@@ -234,6 +245,7 @@
                         android:text="Asal dan jumlah benih sumber" />
 
                     <CheckBox
+                        android:id="@+id/cb_benih_sumber"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:checked="false"
@@ -248,7 +260,24 @@
                         android:hint="Catatan tambahan hasil monitoring">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edt_alamat_lahan"
+                            android:id="@+id/edt_catatan_monitoring"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:height="170dp"
+                            android:gravity="top"
+                            android:inputType="text|textMultiLine" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="6dp"
+                        android:hint="Kesimpulan hasil monitoring">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_kesimpulan_monitoring"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:height="100dp"

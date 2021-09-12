@@ -34,6 +34,9 @@ class MonitoringAwalFragment : Fragment(), MonitoringAwalAdapter.Callback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedPref = PreferencesHelper(requireContext())
+        val dataAdapter = MonitoringAwalAdapter(this)
+        getJadwalMonitoring(dataAdapter)
+        dataAdapter.notifyDataSetChanged()
     }
 
     override fun onCreateView(
@@ -42,6 +45,7 @@ class MonitoringAwalFragment : Fragment(), MonitoringAwalAdapter.Callback {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_monitoring_awal, container, false)
+
     }
 
     override fun onResume() {
@@ -82,7 +86,7 @@ class MonitoringAwalFragment : Fragment(), MonitoringAwalAdapter.Callback {
     override fun onClick(data: Pesanan) {
         activity.let {
             val intent = Intent(it, FormMonitoringAwal::class.java)
-            startActivity(intent)
+            startActivity(intent.putExtra("pesanan_id", data.id))
         }
     }
 
