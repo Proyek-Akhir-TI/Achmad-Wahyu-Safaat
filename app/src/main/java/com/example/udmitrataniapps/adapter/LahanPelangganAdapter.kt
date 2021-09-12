@@ -48,11 +48,16 @@ class LahanPelangganAdapter(val callback : Callback) :RecyclerView.Adapter<Lahan
             itemView.btn_update_lahan.setOnClickListener {
                 callback.onClick(l)
             }
+
+            itemView.btn_delete_lahan.setOnClickListener {
+                callback.onDelete(l)
+            }
         }
     }
 
     interface Callback{
         fun onClick(data: DataLahan)
+        fun onDelete(data: DataLahan)
     }
 
 }

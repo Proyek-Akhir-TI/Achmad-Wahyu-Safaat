@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.model.pelanggan.VarietasPadi
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_benih.view.*
 
 class VarietasBenihAdapter(val callback: Callback): RecyclerView.Adapter<VarietasBenihAdapter.MyViewHolder>() {
@@ -19,7 +20,12 @@ class VarietasBenihAdapter(val callback: Callback): RecyclerView.Adapter<Varieta
     inner class MyViewHolder(itemView: View, callback: Callback):RecyclerView.ViewHolder(itemView) {
         fun bind(b: VarietasPadi){
             itemView.tv_title_benih.text = b.nama_varietas
-
+            val image = "http://192.168.1.107/proyek_akhir/public/images/"+b.foto_varietas
+            Picasso.get()
+                .load(image)
+                .placeholder(R.drawable.calendar)
+                .error(R.drawable.calendar)
+                .into(itemView.iv_icon_benih)
             itemView.setOnClickListener {
                 callback.onClick(b)
             }

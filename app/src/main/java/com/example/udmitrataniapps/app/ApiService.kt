@@ -86,7 +86,6 @@ interface ApiService {
         @Field("tgl_sebar") tgl_sebar : String,
         @Field("tgl_tanam") tgl_tanam : String,
         @Field("varietas_padi") varietas_padi : String,
-        @Field("total_benih") total_benih : String
         ):Call<ResponseModel>
 
     @GET("pelanggan/detail-pesanan/{id}")
@@ -97,6 +96,11 @@ interface ApiService {
 
     @GET("pelanggan/pesanans")
     fun getPesanansPelanggan(
+        @Header("Authorization") token: String,
+    ):Call<ResponseArrayModel>
+
+    @GET("pelanggan/monitoring")
+    fun getMonitoringPelanggan(
         @Header("Authorization") token: String,
     ):Call<ResponseArrayModel>
 

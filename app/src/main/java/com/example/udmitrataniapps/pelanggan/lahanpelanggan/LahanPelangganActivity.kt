@@ -13,6 +13,7 @@ import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.model.ResponseArrayModel
 import com.example.udmitrataniapps.model.ResponseModel
 import com.example.udmitrataniapps.model.pelanggan.DataLahan
+import com.inyongtisto.myhelper.extension.showSuccessDialog
 import kotlinx.android.synthetic.main.activity_lahan_pelanggan.*
 import kotlinx.android.synthetic.main.item_lahan_pelanggan.*
 import retrofit2.Call
@@ -32,7 +33,7 @@ class LahanPelangganActivity : AppCompatActivity(), LahanPelangganAdapter.Callba
     }
 
     override fun onResume() {
-        var adapter = LahanPelangganAdapter(this)
+        val adapter = LahanPelangganAdapter(this)
         sharedPref = PreferencesHelper(this)
         pb_lahan.visibility = View.VISIBLE
         fetchDataLahan(adapter)
@@ -66,6 +67,33 @@ class LahanPelangganActivity : AppCompatActivity(), LahanPelangganAdapter.Callba
         startActivity(Intent(this, FormLahanActivity::class.java)
             .putExtra("statusButton", false)
             .putExtra("dataLahan", data))
+    }
+
+    override fun onDelete(data: DataLahan) {
+        ApiConfig.instancRetrofit.deleteLahan(
+            token = "Bearer ${sharedPref.fetchAuthToken()}",
+            data.id
+        ).enqueue(object : Callback<ResponseModel>{
+            override fun onResponse(
+                call: Call<ResponseModel>,
+                response: Response<ResponseModel>
+            ) {
+                if (response.isSuccessful) {
+                    showSuccessDialog(response.body()!!.message) {
+                        val intent =
+                            Intent(this@LahanPelangganActivity, LahanPelangganActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                            startActivity(intent)
+                    }
+
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                Toast.makeText(this@LahanPelangganActivity, "error ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 
 }

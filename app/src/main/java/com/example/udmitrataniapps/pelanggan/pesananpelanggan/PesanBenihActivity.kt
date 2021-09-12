@@ -1,6 +1,8 @@
 package com.example.udmitrataniapps.pelanggan.pesananpelanggan
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,9 @@ import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.model.ResponseArrayModel
 import com.example.udmitrataniapps.model.ResponseModel
+import com.inyongtisto.myhelper.base.BaseActivity
+import com.inyongtisto.myhelper.extension.showErrorDialog
+import com.inyongtisto.myhelper.extension.showSuccessDialog
 import kotlinx.android.synthetic.main.activity_form_lahan.*
 import kotlinx.android.synthetic.main.activity_lahan_pelanggan.*
 import kotlinx.android.synthetic.main.activity_pesan_benih.*
@@ -26,7 +31,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class PesanBenihActivity : AppCompatActivity() {
+class PesanBenihActivity : BaseActivity() {
 
     lateinit var sharedPref : PreferencesHelper
 
@@ -48,7 +53,7 @@ class PesanBenihActivity : AppCompatActivity() {
 
             Log.d("id spinner", btn_tgl_sebar.text.toString())
             pesanBenih()
-
+            progress.show()
         }
     }
 
@@ -63,19 +68,24 @@ class PesanBenihActivity : AppCompatActivity() {
             lahan_pelanggan_id = idLahan.toInt(),
             btn_tgl_sebar.text.toString(),
             btn_tgl_tanam.text.toString(),
-            idVarietas,
-            edt_total_benih.text.toString()
+            idVarietas
         ).enqueue(object : Callback<ResponseModel>{
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
-                if (response.isSuccessful){
+                val resp = response.body()!!
+                progress.dismiss()
+                if (resp.success == 1){
                     startActivity(Intent(this@PesanBenihActivity, InvoicePesananActivity::class.java)
                         .putExtra("id_pesanan", response.body()!!.pesanan.id)
                         .putExtra("nama_varietas", textVarietas[1]))
                     finish()
+                } else if (resp.success == 0){
+                    showErrorDialog(resp.message)
+//                    Toast.makeText(this@PesanBenihActivity, resp.message, Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                progress.dismiss()
                 Toast.makeText(this@PesanBenihActivity, t.message, Toast.LENGTH_LONG).show()
             }
 

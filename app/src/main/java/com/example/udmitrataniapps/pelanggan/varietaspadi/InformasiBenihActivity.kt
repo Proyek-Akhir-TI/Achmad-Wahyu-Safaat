@@ -68,6 +68,7 @@ class InformasiBenihActivity : AppCompatActivity(), VarietasBenihAdapter.Callbac
             .putExtra("id" ,data.id.toString())
             .putExtra("deskripsi", data.deskripsi_varietas)
             .putExtra("nama_varietas", data.nama_varietas)
+            .putExtra("foto", data.foto_varietas)
         )
     }
 }

@@ -14,7 +14,6 @@ import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.model.pegawai.ResponseJadwalMonitoring
 import com.example.udmitrataniapps.petugas.fragment.adapters.jadwaladapters.JadwalFaseVegetatifFragmentAdapter
-import com.example.udmitrataniapps.petugas.fragment.jadwalmonitoring.viewmodel.JadwalFaseVegetatifViewModel
 import kotlinx.android.synthetic.main.jadwal_fase_vegetatif_fragment.*
 import retrofit2.Call
 import retrofit2.Response
@@ -29,7 +28,6 @@ class JadwalFaseVegetatifFragment : Fragment() {
         fun newInstance() = JadwalFaseVegetatifFragment()
     }
 
-    private lateinit var viewModel: JadwalFaseVegetatifViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +38,6 @@ class JadwalFaseVegetatifFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(JadwalFaseVegetatifViewModel::class.java)
         sharedPref = PreferencesHelper(requireContext())
     }
 

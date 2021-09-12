@@ -100,15 +100,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Rencana Banyak Benih"/>
+                android:text="NB : Bnayak benih yang digunakan adalah 30 kilogram/hektar"/>
 
-            <EditText
-                android:id="@+id/edt_total_benih"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_input"
-                android:hint="Total Benih (kg)"
-                android:padding="10dp"/>
+
 
 
 

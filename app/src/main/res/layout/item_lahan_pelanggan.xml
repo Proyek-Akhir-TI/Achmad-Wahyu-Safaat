@@ -67,6 +67,21 @@
                 android:text="Ubah Lahan"
                 app:drawableStartCompat="@drawable/ic_edit_24" />
 
+            <TextView
+                android:id="@+id/btn_delete_lahan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_button"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:paddingEnd="10dp"
+                android:gravity="center"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="@color/red"
+                android:textColor="#fff"
+                android:text="Ubah Lahan"
+                app:drawableStartCompat="@drawable/ic_edit_24" />
+
         </LinearLayout>
 
     </LinearLayout>

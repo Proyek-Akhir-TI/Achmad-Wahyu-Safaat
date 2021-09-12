@@ -14,7 +14,6 @@ import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.model.pegawai.ResponseJadwalMonitoring
 import com.example.udmitrataniapps.petugas.fragment.adapters.jadwaladapters.JadwalFaseMasakFragmentAdapter
-import com.example.udmitrataniapps.petugas.fragment.jadwalmonitoring.viewmodel.JadwalFaseMasakViewModel
 import kotlinx.android.synthetic.main.jadwal_fase_berbunga_fragment.dialog_empty
 import kotlinx.android.synthetic.main.jadwal_fase_masak_fragment.*
 import retrofit2.Call
@@ -30,7 +29,6 @@ class JadwalFaseMasakFragment : Fragment() {
         fun newInstance() = JadwalFaseMasakFragment()
     }
 
-    private lateinit var viewModel: JadwalFaseMasakViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,7 +39,6 @@ class JadwalFaseMasakFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(JadwalFaseMasakViewModel::class.java)
         sharedPref = PreferencesHelper(requireContext())
     }
 

@@ -13,6 +13,7 @@ import com.example.udmitrataniapps.pelanggan.lahanpelanggan.LahanPelangganActivi
 import com.example.udmitrataniapps.pelanggan.pesananpelanggan.DetailPesananActivity
 import com.example.udmitrataniapps.pelanggan.pesananpelanggan.PesanBenihActivity
 import com.example.udmitrataniapps.pelanggan.pesananpelanggan.PesananPelangganActivity
+import com.example.udmitrataniapps.pelanggan.pesananpelanggan.RiwayatMonitoringActivity
 import com.example.udmitrataniapps.pelanggan.varietaspadi.InformasiBenihActivity
 import kotlinx.android.synthetic.main.activity_dashboard_pelanggan.*
 
@@ -58,7 +59,7 @@ class DashboardPelangganActivity : AppCompatActivity() {
         }
 
         menu_riwayat_monitoring.setOnClickListener {
-            startActivity(Intent(this, DetailPesananActivity::class.java))
+            startActivity(Intent(this, RiwayatMonitoringActivity::class.java))
         }
     }
 
