@@ -59,7 +59,7 @@ class RiwayatMonitoringActivity : AppCompatActivity(), RiwayatMonitoringAdapter.
 
     override fun onClick(data: Pesanan) {
         startActivity(
-            Intent(this, InvoicePesananActivity::class.java)
-            .putExtra("id_pesanan", data.id))
+            Intent(this, DetailPesananActivity  ::class.java)
+            .putExtra("pesanan_id", data.id))
     }
 }

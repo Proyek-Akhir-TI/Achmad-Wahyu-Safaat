@@ -3,6 +3,7 @@ package com.example.udmitrataniapps.app
 import com.example.udmitrataniapps.model.ResponseArrayModel
 import com.example.udmitrataniapps.model.ResponseModel
 import com.example.udmitrataniapps.model.pegawai.ResponseJadwalMonitoring
+import com.example.udmitrataniapps.model.pelanggan.PemeriksaanAwal
 import com.example.udmitrataniapps.model.pelanggan.ResponseDetailVarietas
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -103,6 +104,12 @@ interface ApiService {
     fun getMonitoringPelanggan(
         @Header("Authorization") token: String,
     ):Call<ResponseArrayModel>
+
+    @GET("pelanggan/pemeriksaan-awal/{id}")
+    fun getRiwayatMonitoring(
+        @Header("Authorization") token: String,
+        @Path("id") idPesanan : Int
+    ):Call<PemeriksaanAwal>
 
     @GET("petugas/jadwal-monitoring-fase-awal")
     fun getJadwalMonitoringFaseAwal(

@@ -59,7 +59,12 @@ class PesanBenihActivity : BaseActivity() {
 
     private fun pesanBenih() {
         val textLahan = sp_lahan.selectedItem.toString().split(" ")
-        val idLahan = textLahan[3]
+        var idLahan = ""
+        if (textLahan[3] == "Terlebih"){
+            idLahan = "0"
+        } else {
+            idLahan = textLahan[3]
+        }
         val textVarietas = sp_benih.selectedItem.toString().split( " ")
         val idVarietas = textVarietas[0]
 
@@ -134,8 +139,12 @@ class PesanBenihActivity : BaseActivity() {
                     div_alamat.visibility = View.VISIBLE
                     val respon = response.body()!!
                     val arrayString = ArrayList<String>()
-                    for (lahan in respon.data_lahan){
-                        arrayString.add("kode Lahan : "+lahan.id+" , "+lahan.nama_lahan)
+                    if (respon.data_lahan.isNotEmpty()){
+                        for (lahan in respon.data_lahan){
+                            arrayString.add("kode Lahan : "+lahan.id+" , "+lahan.nama_lahan)
+                        }
+                    }else {
+                        arrayString.add("Lengkapi Data Lahan Terlebih Dahulu")
                     }
 
                     val adapter = ArrayAdapter<Any>(this@PesanBenihActivity, R.layout.support_simple_spinner_dropdown_item, arrayString.toTypedArray())
