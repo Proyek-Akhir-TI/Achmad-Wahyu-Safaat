@@ -20,7 +20,7 @@ class RiwayatMonitoringAdapter (val callback: Callback) :RecyclerView.Adapter<Ri
             itemView.tv_nama_lahan.text = data.nama_lahan
             itemView.tv_pesanan_nomor_induk.text = data.nomor_induk
             itemView.tv_pesanan_status_pesanan.text = data.status_pesanan
-            itemView.tv_pesanan_aktivitas.text = data.created_at
+            itemView.tv_pesanan_aktivitas.text = data.updated_at
 
             itemView.setOnClickListener {
                 callback.onClick(data)

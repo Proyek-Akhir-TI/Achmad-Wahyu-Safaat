@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.udmitrataniapps">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,48 +17,65 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".pelanggan.pesananpelanggan.RiwayatMonitoringActivity"></activity>
+        <activity android:name=".pelanggan.pesananpelanggan.RiwayatMonitoringActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".petugas.FormMonitoringLanjut"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".pelanggan.pesananpelanggan.DetailPesananActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".pelanggan.pesananpelanggan.DetailPesananActivity" />
         <activity
             android:name=".pelanggan.varietaspadi.DetailVarietasBenih"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".petugas.FormMonitoringAwal"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".pelanggan.pesananpelanggan.PesananPelangganActivity" />
-        <activity android:name=".pelanggan.pesananpelanggan.InvoicePesananActivity" />
-        <activity android:name=".pelanggan.lahanpelanggan.FormLahanActivity" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".pelanggan.pesananpelanggan.PesananPelangganActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".pelanggan.pesananpelanggan.InvoicePesananActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".pelanggan.lahanpelanggan.FormLahanActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".pelanggan.pesananpelanggan.PesanBenihActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
         <activity
             android:name=".pelanggan.lahanpelanggan.LahanPelangganActivity"
             android:launchMode="singleTop"
+            android:screenOrientation="portrait"
             android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
         <activity
             android:name=".pelanggan.varietaspadi.InformasiBenihActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName=".pelanggan.DashboardPelangganActivity" />
         <activity
             android:name=".petugas.JadwalMonitoringActivity"
             android:parentActivityName=".petugas.DashboardPetugasActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".petugas.MonitoringFaseActivity"
             android:parentActivityName=".petugas.DashboardPetugasActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".petugas.NotifikasiActivity"
             android:label="Notifikasi"
             android:parentActivityName=".petugas.DashboardPetugasActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".petugas.DashboardPetugasActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".pelanggan.DashboardPelangganActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignUpActivity"
@@ -67,7 +85,8 @@
         <activity
             android:name=".SignInActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

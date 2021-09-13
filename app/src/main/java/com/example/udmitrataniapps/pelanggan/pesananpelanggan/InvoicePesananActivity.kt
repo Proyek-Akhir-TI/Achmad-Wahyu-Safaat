@@ -3,6 +3,7 @@ package com.example.udmitrataniapps.pelanggan.pesananpelanggan
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.app.ApiConfig
@@ -45,6 +46,10 @@ class InvoicePesananActivity : AppCompatActivity() {
                     tv_tgl_sebar.text           = respon.tgl_sebar
                     tv_tgl_tanam.text           = respon.tgl_tanam
                     tv_total_biaya.text         = respon.total_biaya.toString()
+                }
+
+                if (response.body()!!.pesanan.status_pesanan == "Lunas"){
+                    view_rekening.visibility = View.GONE
                 }
             }
 

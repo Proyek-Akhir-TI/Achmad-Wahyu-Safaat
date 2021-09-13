@@ -1,45 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8E8E8"
+    android:orientation="vertical"
     tools:context=".pelanggan.pesananpelanggan.DetailPesananActivity">
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/dialog_empty_detail"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="80dp"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:visibility="gone">-->
+
+    <!--        <pl.droidsonroids.gif.GifImageView-->
+    <!--            android:id="@+id/image"-->
+    <!--            android:layout_width="250dp"-->
+    <!--            android:layout_height="200dp"-->
+    <!--            android:layout_gravity="center_horizontal"-->
+    <!--            android:layout_marginBottom="50dp"-->
+    <!--            android:src="@drawable/gif_monitoring" />-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_below="@+id/image"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:fontFamily="@font/poppins"-->
+    <!--            android:gravity="center_horizontal"-->
+    <!--            android:text="Hasil Monitoring Belum Tersedia"-->
+    <!--            android:textColor="@color/colorTextBlack"-->
+    <!--            android:textSize="20sp" />-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_marginStart="16dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:layout_marginEnd="16dp"-->
+    <!--            android:fontFamily="@font/poppins"-->
+    <!--            android:gravity="center_horizontal"-->
+    <!--            android:text="Belum ada hasil monitoring pada pesanan anda, silahkan kembali lagi nanti atau hubungi customer sevice untuk informasi lebih lanjut"-->
+    <!--            android:textSize="14sp" />-->
+    <!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:orientation="vertical">
-
-        <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/image"
-            android:layout_width="250dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="50dp"
-            android:src="@drawable/gif_monitoring"/>
+        android:layout_height="80dp"
+        android:background="@color/colorPrimary">
 
         <TextView
-            android:layout_below="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/colorTextBlack"
-            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
             android:fontFamily="@font/poppins"
-            android:text="Hasil Monitoring Belum Tersedia" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:textSize="14sp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/poppins"
-            android:text="Belum ada hasil monitoring pada pesanan anda, silahkan kembali lagi nanti atau hubungi customer sevice untuk informasi lebih lanjut" />
+            android:text="Riwayat Monitoring"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
     </LinearLayout>
-</RelativeLayout>
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/layout_awal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="5dp"
+                    android:padding="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:fontFamily="@font/poppins"
+                                android:text="Hasil Pemeriksaan Fase Pendahuluan"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="16dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:id="@+id/tv_letak_areal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="Benar"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tv_luas_areal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="Benar"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tv_isolasi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="Benar"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tv_sejarah_lapang"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="Benar"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tv_asal_jumlah"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="Benar"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tv_catatan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins"
+                                android:text="Benar"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tv_kesimpulan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins"
+                                android:text="Benar"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_pemeriksaan_lanju"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:layout_below="@id/layout_awal"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_riwayat_monitoring" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

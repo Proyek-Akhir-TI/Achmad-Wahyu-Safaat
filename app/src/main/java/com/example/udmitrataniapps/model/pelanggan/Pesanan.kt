@@ -15,6 +15,7 @@ class Pesanan {
     lateinit var stok_padi_id : String
     lateinit var status_pesanan : String
     lateinit var created_at : String
+    lateinit var updated_at : String
     lateinit var nama_lahan : String
     var stok_padi = StokPadiModel()
     var lahan_pelanggan = LahanPelanggan()
