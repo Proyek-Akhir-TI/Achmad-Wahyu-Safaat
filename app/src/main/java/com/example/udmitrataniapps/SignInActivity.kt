@@ -3,6 +3,7 @@ package com.example.udmitrataniapps
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.udmitrataniapps.app.ApiConfig
@@ -10,6 +11,8 @@ import com.example.udmitrataniapps.helper.PreferencesHelper
 import com.example.udmitrataniapps.model.ResponseModel
 import com.example.udmitrataniapps.pelanggan.DashboardPelangganActivity
 import com.example.udmitrataniapps.petugas.DashboardPetugasActivity
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,7 +20,7 @@ import retrofit2.Response
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var sharedPref: PreferencesHelper
-
+    private lateinit var fcm : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +38,23 @@ class SignInActivity : AppCompatActivity() {
             pb_login.visibility = View.VISIBLE
             if (sw_login.isChecked)  login_pegawai() else login_pelanggan()
         }
+
+        getFcm()
+    }
+
+    private fun getFcm() {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("respon : ","Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+            fcm=token.toString()
+            // Log and toast
+            Log.d("Respon Token", token)
+        })
     }
 
     override fun onStart() {
@@ -63,7 +83,8 @@ class SignInActivity : AppCompatActivity() {
     private fun login_pelanggan() {
         ApiConfig.instancRetrofit.loginPelanggan(
             edt_username.text.toString(),
-            edt_password.text.toString()
+            edt_password.text.toString(),
+            fcm
         ).enqueue(object : Callback<ResponseModel> {
             override fun onResponse(
                 call: Call<ResponseModel>,

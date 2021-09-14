@@ -29,7 +29,8 @@ interface ApiService {
     @POST("login-pelanggan")
     fun loginPelanggan(
         @Field("name") name: String,
-        @Field("password") password: String
+        @Field("password") password: String,
+        @Field("fcm") fcm: String
     ):Call<ResponseModel>
 
     @FormUrlEncoded
