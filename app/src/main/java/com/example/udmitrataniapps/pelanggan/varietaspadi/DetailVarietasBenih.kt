@@ -30,7 +30,7 @@ class DetailVarietasBenih : AppCompatActivity() {
     private fun initApp() {
         tv_desc_varietas.text = intent.getStringExtra("deskripsi")
         tv_nama_varietas.text = intent.getStringExtra("nama_varietas")
-        val image = "http://192.168.1.107/proyek_akhir/public/images/${intent.getStringExtra("foto")}"
+        val image = "http://mitratani.store/public/images/${intent.getStringExtra("foto")}"
         Picasso.get()
             .load(image)
             .placeholder(R.drawable.benih)

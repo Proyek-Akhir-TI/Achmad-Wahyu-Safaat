@@ -58,7 +58,9 @@ class MonitoringLanjutAdapter : RecyclerView.Adapter<MonitoringLanjutAdapter.MyV
             itemView.tv_cvl2.text = "CVL 2 = "+ if (m.inbrida_cvl4==null) 0 else m.inbrida_cvl2
             itemView.tv_cvl3.text = "CVL 3 = "+ if (m.inbrida_cvl3==null) 0 else m.inbrida_cvl3
             itemView.tv_cvl4.text = "CVL 4 = "+ if (m.inbrida_cvl4==null) 0 else m.inbrida_cvl4
-            val image = "http://192.168.1.107/proyek_akhir/public/storage/monitorings/"+m.foto_monitoring
+//            val image = "http://192.168.1.107/proyek_akhir/public/storage/monitorings/"+m.foto_monitoring
+            val image = "https://mitratani.store/public/storage/monitorings/"+m.foto_monitoring
+
             Picasso.get()
                 .load(image)
                 .error(R.drawable.no_image)

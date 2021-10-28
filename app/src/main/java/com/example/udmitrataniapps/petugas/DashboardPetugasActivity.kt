@@ -25,10 +25,10 @@ class DashboardPetugasActivity : AppCompatActivity() {
             finish()
         }
 
-        menu_notififikasi.setOnClickListener {
-            val intent = Intent(this, NotifikasiActivity::class.java)
-            startActivity(intent)
-        }
+//        menu_notififikasi.setOnClickListener {
+//            val intent = Intent(this, NotifikasiActivity::class.java)
+//            startActivity(intent)
+//        }
 
         menu_monitoring.setOnClickListener {
             val intent = Intent(this, MonitoringFaseActivity::class.java)

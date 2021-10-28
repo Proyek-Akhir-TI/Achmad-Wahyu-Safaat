@@ -60,14 +60,9 @@ class PesanBenihActivity : BaseActivity() {
     private fun pesanBenih() {
         val textLahan = sp_lahan.selectedItem.toString().split(" ")
         var idLahan = ""
-        if (textLahan[3] == "Terlebih"){
-            idLahan = "0"
-        } else {
-            idLahan = textLahan[3]
-        }
+        idLahan = if (textLahan[3] == "Terlebih"){ "0" } else { textLahan[3] }
         val textVarietas = sp_benih.selectedItem.toString().split( " ")
         val idVarietas = textVarietas[0]
-
         ApiConfig.instancRetrofit.pesanBenih(
             token = "Bearer ${sharedPref.fetchAuthToken()}",
             lahan_pelanggan_id = idLahan.toInt(),
@@ -85,10 +80,8 @@ class PesanBenihActivity : BaseActivity() {
                     finish()
                 } else if (resp.success == 0){
                     showErrorDialog(resp.message)
-//                    Toast.makeText(this@PesanBenihActivity, resp.message, Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
                 progress.dismiss()
                 Toast.makeText(this@PesanBenihActivity, t.message, Toast.LENGTH_LONG).show()

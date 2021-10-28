@@ -2,17 +2,11 @@ package com.example.udmitrataniapps.petugas
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.Presentation
-import android.content.Intent
-import android.graphics.Bitmap
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import coil.load
 import com.example.udmitrataniapps.R
 import com.example.udmitrataniapps.app.ApiConfig
 import com.example.udmitrataniapps.helper.PreferencesHelper
@@ -21,9 +15,12 @@ import com.github.drjacky.imagepicker.ImagePicker
 import com.inyongtisto.myhelper.extension.toMultipartBody
 import kotlinx.android.synthetic.main.activity_form_monitoring_awal.*
 import kotlinx.android.synthetic.main.activity_form_monitoring_lanjut.*
-import okhttp3.MediaType
+import kotlinx.android.synthetic.main.activity_form_monitoring_lanjut.isolasi_barat
+import kotlinx.android.synthetic.main.activity_form_monitoring_lanjut.isolasi_selatan
+import kotlinx.android.synthetic.main.activity_form_monitoring_lanjut.isolasi_timur
+import kotlinx.android.synthetic.main.activity_form_monitoring_lanjut.isolasi_utara
+import kotlinx.android.synthetic.main.item_riwayat_monitoring.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -59,7 +56,7 @@ class FormMonitoringLanjut : AppCompatActivity() {
                 Toast.makeText(this, "Masukkan Foto Terlebih Dahulu", Toast.LENGTH_SHORT).show()
             } else {
                 sendMonitoringLanjut(fileUri!!)
-//                Log.d("tag :", pesanan_id.toString())
+//                Log.d("tag :", waktu.hour.toString())
             }
         }
     }
@@ -76,7 +73,7 @@ class FormMonitoringLanjut : AppCompatActivity() {
 
     private fun sendMonitoringLanjut(file: File) {
         val fileImage = file.toMultipartBody()
-
+        val waktu = "${pick_waktu.hour}:${pick_waktu.minute}"
         ApiConfig.instancRetrofit.sendMonitoringLanjut(
             token = "Bearer ${sharedPref.fetchAuthToken()}",
             RequestBody.create(
@@ -111,6 +108,12 @@ class FormMonitoringLanjut : AppCompatActivity() {
             RequestBody.create("text/plain".toMediaTypeOrNull(), getCheckBoxHama(hama.isChecked)),
             RequestBody.create("text/plain".toMediaTypeOrNull(), edt_perkiraan_produksi.text.toString()),
             RequestBody.create("text/plain".toMediaTypeOrNull(), edt_contoh_pemeriksaan.text.toString()),
+            RequestBody.create("text/plain".toMediaTypeOrNull(), waktu),
+            RequestBody.create("text/plain".toMediaTypeOrNull(), edt_tgl_panen.text.toString()),
+            RequestBody.create("text/plain".toMediaTypeOrNull(), edt_cvl1.text.toString()),
+            RequestBody.create("text/plain".toMediaTypeOrNull(), edt_cvl2.text.toString()),
+            RequestBody.create("text/plain".toMediaTypeOrNull(), edt_cvl3.text.toString()),
+            RequestBody.create("text/plain".toMediaTypeOrNull(), edt_cvl4.text.toString()),
             fileImage!!
         ).enqueue(object : Callback<ResponseModel> {
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {

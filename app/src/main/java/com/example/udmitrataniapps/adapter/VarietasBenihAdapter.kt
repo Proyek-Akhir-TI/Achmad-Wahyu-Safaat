@@ -20,7 +20,8 @@ class VarietasBenihAdapter(val callback: Callback): RecyclerView.Adapter<Varieta
     inner class MyViewHolder(itemView: View, callback: Callback):RecyclerView.ViewHolder(itemView) {
         fun bind(b: VarietasPadi){
             itemView.tv_title_benih.text = b.nama_varietas
-            val image = "http://192.168.1.107/proyek_akhir/public/images/"+b.foto_varietas
+//            val image = "http://192.168.1.107/proyek_akhir/public/images/"+b.foto_varietas
+            val image = "https://mitratani.store/public/images/"+b.foto_varietas
             Picasso.get()
                 .load(image)
                 .placeholder(R.drawable.calendar)

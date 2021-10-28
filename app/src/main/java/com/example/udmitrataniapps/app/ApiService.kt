@@ -175,20 +175,26 @@ interface ApiService {
     @Multipart
     @POST("petugas/monitoring-lanjut")
     fun sendMonitoringLanjut(
-        @Header("Authorization") token : String,
-        @Part("pesanan_id") pesanan_id : RequestBody,
-        @Part("pemeriksaan_awal_id") pemeriksaan_awal : RequestBody,
-        @Part("jenis_pemeriksaan") jenis_pemeriksaan : RequestBody,
-        @Part("isolasi_timur") isolasi_timur : RequestBody,
-        @Part("isolasi_barat") isolasi_barat : RequestBody,
-        @Part("isolasi_selatan") isolasi_selatan : RequestBody,
-        @Part("isolasi_utara") isolasi_utara : RequestBody,
-        @Part("barier") barier : RequestBody,
-        @Part("sifat_penanaman") sifat_penanaman : RequestBody,
-        @Part("serangan_hama") serangan_hama : RequestBody,
-        @Part("perkiraan_produksi") perkiraan_produksi : RequestBody,
-        @Part("jumlah_contoh_pemeriksaan") jumlah_contoh_pemeriksaan : RequestBody,
-        @Part image : MultipartBody.Part
+        @Header("Authorization") token: String,
+        @Part("pesanan_id") pesanan_id: RequestBody,
+        @Part("pemeriksaan_awal_id") pemeriksaan_awal: RequestBody,
+        @Part("jenis_pemeriksaan") jenis_pemeriksaan: RequestBody,
+        @Part("isolasi_timur") isolasi_timur: RequestBody,
+        @Part("isolasi_barat") isolasi_barat: RequestBody,
+        @Part("isolasi_selatan") isolasi_selatan: RequestBody,
+        @Part("isolasi_utara") isolasi_utara: RequestBody,
+        @Part("barier") barier: RequestBody,
+        @Part("sifat_penanaman") sifat_penanaman: RequestBody,
+        @Part("serangan_hama") serangan_hama: RequestBody,
+        @Part("perkiraan_produksi") perkiraan_produksi: RequestBody,
+        @Part("jumlah_contoh_pemeriksaan") jumlah_contoh_pemeriksaan: RequestBody,
+        @Part("waktu") waktu: RequestBody,
+        @Part("perkiraan_tanggal_panen") perkiraan_tanggal_panen: RequestBody,
+        @Part("inbrida_cvl1") inbrida_cvl1: RequestBody,
+        @Part("inbrida_cvl2") inbrida_cvl2: RequestBody,
+        @Part("inbrida_cvl3") inbrida_cvl3: RequestBody,
+        @Part("inbrida_cvl4") inbrida_cvl4: RequestBody,
+        @Part image: MultipartBody.Part
     ):Call<ResponseModel>
 
 //    @Multipart
